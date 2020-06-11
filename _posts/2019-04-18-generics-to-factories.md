@@ -62,4 +62,4 @@ One note for those planning on using this: Using a factory class is important. I
 
 ---
 
-Note: This article was originally published on [Medium](https://medium.com/@phlippie.bosman/swift-generics-moving-type-parameters-out-of-angled-brackets-and-into-factory-methods-a2f7f8b06961).
+Note: This article was originally published on [Medium](https://medium.com/@phlippie.bosman/swift-generics-moving-type-parameters-out-of-angled-brackets-and-into-factory-methods-a2f7f8b06961){:target="_blank"}.
