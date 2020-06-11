@@ -1,53 +1,51 @@
 # SITE CONFIGURATION
-baseurl: "/type-theme"
-url: "https://rohanchandra.github.io/"
+baseurl: ""
+url: "https://phlippieb.github.io/"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type Theme
+  title: Phlippie Bosman
   avatar: assets/img/avatar.png
   favicon: assets/favicon.ico
-  gravatar: # Email MD5 hash
-  description: "A website with blog posts and pages" # used by search engines
+  gravatar: 
+  description: Phlippie Bosman's blog
 
   # Header and footer text
   header_text: >
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-     <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
+     <p>Phlippie Bosman's blog</p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
 
   # Icons
   rss: false
-  email_address: # Full email address, e.g. "sam@example.com"
+  email_address: phlippie.bosman@gmail.com
   behance:
   bitbucket:
   dribbble:
   facebook:
   flickr:
   gitlab:
-  github: "rohanchandra/type-theme"
+  github: "phlippieb"
   gitter:
   google_plus:
   instagram:
   linkedin:  # Full URL
   pinterest:
   reddit:
-  soundcloud:
-  stack_exchange:  # Full URL
+  soundcloud: phlippie-bosman
+  stack_exchange:  https://stackexchange.com/users/1584327/p-bosman
   steam:
   tumblr:
-  twitter:
+  twitter: phlippieb
   wordpress:
   youtube:
 
   # Scripts
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname:
-  katex: true # Enable if using math markup
+  katex: false # Enable if using math markup
   search: false # Enable the search feature
 
   # Localization strings
@@ -79,7 +77,7 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
-plugins: [jekyll-paginate]
+plugins: [jekyll-paginate, jekyll-gist]
 exclude:
   - Gemfile
   - Gemfile.lock

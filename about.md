@@ -2,11 +2,10 @@
 layout: page
 title: About
 permalink: /about/
-feature-img: "assets/img/sample_feature_img_2.png"
 ---
 
-Type Theme is a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.
+I am a software developer working mostly in Swift on iOS. I work at [Retro Rabbit](http://retrorabbit.co.za) in Pretoria, South Africa, and mostly work on the iOS platform for [Kalido](http://kalido.me). I like to play with design patterns and ergonomics that bring production code and plain English closer together.
 
-Head over to the [theme's documentation](https://rohanchandra.github.io/project/type/) for much more information about Type Theme or to install this theme on your own Jekyll site.
+I completed a master's degree in compuational intelligence - specifically, in particle swarm optimisers - which has mostly left me with the realisation that I really know much about computational intelligence or particle swarm optimisers.
 
-This file is an example of a page in Jekyll, that automatically shows up in the header navigation, you can delete or modify this file freely.
+I also play bass in a band called [Friends With Pools](https://www.youtube.com/watch?v=P99kd2nivp8), and I sometimes [make music](https://soundcloud.com/phlippie-bosman) on my computer.
