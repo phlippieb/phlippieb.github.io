@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Swift: moving generics types from angled brackets to factory method parameters"
+comments: true
 tags: [Swift, iOS, Generics, Factory]
 ---
 
