@@ -44,7 +44,7 @@ theme_settings:
 
   # Scripts
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname: phlippieb.disqus.com
+  disqus_shortname: phlippieb
   katex: false # Enable if using math markup
   search: false # Enable the search feature
 
