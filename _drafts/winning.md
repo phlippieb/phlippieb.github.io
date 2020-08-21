@@ -28,7 +28,7 @@ Boet.
 
 ---
 
-# The Way of Gitting Gud
+# The Way of Git Gud
 
 The first strategy is the most obvious, but it's worth talking about anyway.
 Not a reference to the version control system, the Way of ["Git Gud"](https://knowyourmeme.com/memes/git-gud) is taken from online gaming. 
@@ -136,3 +136,7 @@ we should take things easy when things are easy in order to gather strength for 
 - be conservative with estimates, and take care of your technical debt, to avoid crunches
 - keeping a balanced sprint? if work is important, try to make a little progress every sprint
 - micro habits for non-main work
+
+# Conclusion
+
+todo
