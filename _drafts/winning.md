@@ -100,7 +100,9 @@ Sometimes I end up with a repo that I can show off on my Github page, and someti
 Then, when my motivation has dissipated, I simply stop.
 By doing this a few times a year, I follow the Way of Git Gud.
 
-# The Way of the Bumpers
+TODO: this section could use more links to branch out from some of the ideas
+
+# The Way of Bowling with the Bumpers On
 
 The loss of innocence for me was the day I was too old to play ten-pin bowling with the bumpers on. 
 Before that moment, I was carefree.
@@ -112,22 +114,44 @@ My mistakes _counted_.
 On the one hand, once you get better at bowling, the consequences become part of the game. 
 It wouldn't much be fun if you couldn't lose!
 After you've sunk a few balls into the gutter, hitting on-target becomes _rewarding_;
-the taste of failure gives meaning to your successes.
+the taste of failure gives meaning to success.
 
 But on the other hand, not everything we do should have that risk.
 Wouldn't it be good, in some cases, if we could be confident that failure, or at least catastrophic failure, is impossible?
 In particular, work is different from play;
 when someone is paying, our mistakes have an associated cost.
-If we can elminate the very possibility that we will make certain mistakes, why wouldn't we?
+If we can elminate the very possibility of making certain mistakes, why wouldn't we?
 
-The Way of the Bumpers is essentially about winning by cheating.
+The Way of Bowling with the Bumpers On is about winning by cheating.
 When you follow this Way, you attempt to guarantee that you will win by making it impossible to lose.
 
+We do this by making certain types of mistakes impossible. Here follows some ways to achieve that, ordered from most to least robust.
+
+## Leverage type systems
+
+Type systems make certain types of errors impossible.
+(reference replies to this tweet by uncle Bob: https://twitter.com/unclebobmartin/status/1135894377329508355)
+
+some type systems (dependent types) can define behaviour, which means that the compiler can eliminate certain types of incorrect behaviour.
+look for examples; I have a feeling NonEmpty is one
+
+value objects can be used to forbid interactions between certain concepts that shouldn't interact by default;
+i think e.g. creating a type for time in milliseconds prevents you from accidentally adding it to seconds,
+or like we have different types of keys for networks; representing them with different types makes them non-interchangable
+
+check out for more:
+https://twitter.com/fmarreco/status/1136763543615938562
+
+## Make invalid states unrepresentable
+
+enums rather than ints
+
+- type safety eliminates 
+- limiting functions to only take valid inputs
 - using language features (or linting as stopgap), testing, CI to eliminate certain types of errors
-- see if I can find that tweet from uncle bob about how languages do not eliminate errors; it had some good responses to the contrary
 - are there other ways to follow this Way? can't think of any right now.
 
-# The Way of Separa
+# The Way of Separa et Impera
 
 The battlefield is, for better or for worse, perhaps the best judge for evaluating a particular winning strategy.
 When wars have been won and lost by adherence to some words of wisdom, surely it deserves our attention.
