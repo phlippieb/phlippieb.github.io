@@ -7,52 +7,118 @@ tags: []
 
 _Taking cues from general strategies about winning, and applying them to software development_
 
-todo: intro
-can add something about "Ways" in the monk/dnd sense here
-
 Are you winning? 
 
-This can be a vague question with regards to our work as software developers, but in that vague sense, you probably have an answer. 
-The notion of winning is as old as time, timeless even, and is applicable to all the eternal struggles of humanity, ranging from friendly games to deadly wars. 
-Naturally, there are countless wisdoms relating to winning
--- wisdoms, strategies, approaches and pieces of advice that have stood the test of time. 
-Why not see what we can draw from those, and apply to our day jobs?
+This can be a rather vague question with regards to our work as software developers, but in that vague sense, you probably have an answer. 
+The notion of winning is timeless, and has been applicable to all the struggles of humankind through the ages, ranging from friendly games to deadly wars.
+Naturally, there are countless wisdoms relating to winning -- 
+strategies, mindsets, and words of advice that have stood the test of time.
+Why not see what we can draw from those, and apply to our work in the software world?
 
 In the sections below, I will discuss four different pieces of advice, each taken from a different context where winning is the goal.
 Each of these contexts teaches us a lesson about success, which can also be applied to software development.
 These lessons will henceforth be referred to as The Four Ways. 
 
-May the Four Ways bring you oneness your craft.
-
-Boet.
-
----
+May these Four Ways of Winning bring you oneness and harmony in your craft.
 
 # The Way of Git Gud
 
 The first strategy is the most obvious, but it's worth talking about anyway.
 Not a reference to the version control system, the Way of ["Git Gud"](https://knowyourmeme.com/memes/git-gud) is taken from online gaming. 
-It is simple: in order to win, thou shalt put in the time and get better.
+It is simple: in order to win, you must put in the work to get better.
 
-- the importance of experience
-- practicing on the job
-- deliberate practice
-- practical ways to apply this
+## Practice and learning
+
+Practice is obviously important.
+Practice makes perfect -- we all know this.
+You can basically guarantee your success as a developer by following Malcolm Gladwell's famous recipe: just add 10,000 hours of practice.
+
+Learning is equally important.
+You probably find yourself working in a fast-paced, contuously-changing industry.
+You might not be interested in every new programming language or plugin that comes out, but even if your environment or tech stack is highly specialised, you can probably benefit from at least _some_ of the breakthroughs or insights to be had in other fields.
+If you plan to Git Gud, it pays to keep learning.
+
+## ... On the job
+
+Despite the importance of continuous practice and development, chances are that you don't do much of it outside your day job.
+Our jobs can be very demanding, and it is understandable that we don't have any interest in doing more of it when we get home.
+
+
+You might have been sent out for training a few times.
+I have, and I was blown away by the positive impact it had on my work.
+But training is expensive and we don't do it very often.
+
+So many of us simply practice on the job.
+But the job doesn't make for very good practice.
+Of course it doesn't.
+There are real-world constraints, deadlines, expectations and priorities to take into account.
+You don't have much freedom to try out new things, persue tangential interests, or grok concepts that will not directly advance your sprint tickets.
+Failure, which is so integral to learning, is to be avoided in the context of work.
+And the project you work on has its own, specific way of doing things, so any practice that you get mostly just makes you better at working on that project.
+
+## Extra credit
+
+If you want to Git Gud, you need some extra practice and learning.
+There are many ways you can do this, and you are almost guaranteed to benefit from anything that you do.
+For practice, you can do [Code Katas](http://codekata.com/), get involved in open source software, and work on side projects for starters.
+
+And for continuous learning, online courses can be good -- they have inherent structure to guide you through the content. 
+But depending on your goals and interests, an entire course [might be overkill](https://www.influencive.com/why-no-one-finishes-online-courses). 
+Instead of trying to become a specialist in a single field parallel to your job, I suggest that you just keep on learning many different, small things --
+by reading.
+Read a lot.
+Find good weekly developer blogs, browse Medium, follow interesting developers on Twitter, subscribe to newsletters, join subreddits.
+If it puts new information and perspectives on your horizon that you would not have found during the course of your normal workday, read it.
+
+## Balance
+
+The Way of Git Gud is difficult, because it demands that you _add_ to your workload.
+If you have the dedication and energy to do so, then good.
+Most likely though, you will need to find a way to work The Way into your work-life balance, lest burnout rear its ugly head.
+
+In the best case scenario, your workplace might see the benefit in letting you carve out some time for regular practice.
+After all, everyone benefits if it makes you a better developer.
+[Some companies](https://www.inc.com/adam-robinson/google-employees-dedicate-20-percent-of-their-time-to-side-projects-heres-how-it-works.html) have made this a part of their culture;
+depending on what your workplace is like, you might be able to introduce it into yours.
+
+If not, you might be able to work _some_ practice and learning into your normal schedule.
+Waiting for a slow compiler?
+Blocked until the development server comes back up?
+Normally take a few minutes to browse the internet while you have coffee in the morning?
+There are often little gaps in the day; see if you can fill them with reading.
+If not, you could argue that a few minutes of reading a day -- even if it's not directly related to your current ticket, or even project -- has its own long-term benefits that make you a better developer for the rest of the day.
+
+Similarly, while you should definitely not use every new tech stack, architecture or design pattern that you read about on your main project, you might occasionally see an opportunity to try something you have learnt about in the code you're writing.
+It might not be the fastest way to finish the current feature or fix the bug, but it could lay the groundwork for a better codebase down the line.
+
+Lastly, if you're not able to get the benefit of practice without putting in extra hours, it is up to you to decide how much time you are willing to give.
+Every bit helps;
+you don't have to code deep into the early hours every night.
+I find that I have occasional bursts of motivation where I enjoy working on side projects.
+I like to ride out those waves to get some practice or experience in something that interests me.
+Sometimes I end up with a repo that I can show off on my Github page, and sometimes I just gain a little perspective.
+Then, when my motivation has dissipated, I simply stop.
+By doing this a few times a year, I follow the Way of Git Gud.
 
 # The Way of the Bumpers
 
 The loss of innocence for me was the day I was too old to play ten-pin bowling with the bumpers on. 
 Before that moment, I was carefree.
-It didn't matter that my aim was abismal; the bumpers kept the ball on track, and it would eventually hit something. 
+It didn't matter that my aim was abismal; the bumpers kept the ball on track, and I was almost guaranteed to hit something.
 But with the bumpers taken away, there were suddenly consequences. 
 If I missed, I missed. 
 My mistakes _counted_.
 
 On the one hand, once you get better at bowling, the consequences become part of the game. 
 It wouldn't much be fun if you couldn't lose!
-After you've sunk a few balls into the gutter, hitting on-target becomes _rewarding_.
-But on the other hand, not everything we do _needs_ to be ultra risky.
-Sometimes it would be good if we could strike out on a venture and be confident that failure, or at least catastrophic failure, is impossible.
+After you've sunk a few balls into the gutter, hitting on-target becomes _rewarding_;
+the taste of failure gives meaning to your successes.
+
+But on the other hand, not everything we do should have that risk.
+Wouldn't it be good, in some cases, if we could be confident that failure, or at least catastrophic failure, is impossible?
+In particular, work is different from play;
+when someone is paying, our mistakes have an associated cost.
+If we can elminate the very possibility that we will make certain mistakes, why wouldn't we?
 
 The Way of the Bumpers is essentially about winning by cheating.
 When you follow this Way, you attempt to guarantee that you will win by making it impossible to lose.
