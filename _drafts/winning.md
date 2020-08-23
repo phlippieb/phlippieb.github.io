@@ -43,10 +43,11 @@ If you plan to Git Gud, it pays to keep learning.
 Despite the importance of continuous practice and development, chances are that you don't do much of it outside your day job.
 Our jobs can be very demanding, and it is understandable that we don't have any interest in doing more of it when we get home.
 
-
+<!-- TODO -- feels like a good point, but doesn't work here.
 You might have been sent out for training a few times.
 I have, and I was blown away by the positive impact it had on my work.
-But training is expensive and we don't do it very often.
+But training is expensive and we don't do it very often. 
+-->
 
 So many of us simply practice on the job.
 But the job doesn't make for very good practice.
