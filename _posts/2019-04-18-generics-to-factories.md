@@ -3,6 +3,8 @@ layout: article
 title: "Swift: moving generics types from angled brackets to factory method parameters"
 comments: true
 tags: [Swift, iOS, Generics, Factory]
+show_subscribe: false
+license: false
 ---
 
 _Generics are powerful and expressive, but occasionally, they can get a little ugly. This article suggests a simple way to instantiate objects of generic types in Swift so that the roles of the generic types are clear, and to allow for more visually pleasing formatting._
