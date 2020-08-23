@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Four ways to win at software development"
 comments: true
 tags: []
