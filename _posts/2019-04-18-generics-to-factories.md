@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Swift: moving generics types from angled brackets to factory method parameters"
 comments: true
 tags: [Swift, iOS, Generics, Factory]
@@ -11,13 +11,20 @@ _Generics are powerful and expressive, but occasionally, they can get a little u
 
 Now, I’m not saying that generics are always unintuitive or ugly. Anyone with a basic grasp of generics would be able to look at the following snippet and see exactly what role the type `T` plays:
 
-{% gist 3502a05a9e2129563ad60880ebdd4e2d %}
+```swift
+func swapValues<T>(_ x: T, y: T) { 
+  // ... 
+}
+```
 
 Clearly, the function will swap the two given values; `T` simply specifies the type of those values.
 
 But if you’re using generics to generalise something more advanced, you may soon run into something like this:
 
-{% gist 793975af5d4a0be69257c8f4e57b33f2 %}
+```swift
+let thing = GenericThing<Models.ServerObjects.GenericUser, Models.Internal.UnverifiedUser, App.MapFailureLogger>(
+  handler: { [weak self] (serverObject) in return self?.tryMap(serverObject) })
+```
 
 Not the sexiest code to begin with, sure, but the fact that the generic type parameters must go between the `<...>` directly after the class name, and that Xcode has no nice way of formatting generic type parameters on separate lines, and that we can’t label the types to indicate what should go where, turns this into an unreadable mess.
 
@@ -27,23 +34,62 @@ Fortunately, we can solve all of these issues by using factories to instantiate 
 
 Let’s say we have a variety of enums in our app, and we occasionally find it useful to map those enums to one another. For example, here are two:
 
-{% gist b5bfd3b63ed9bd2894dadc1b19db8c71 %}
+```swift
+/// Cases represent errors reported by the server
+enum ServerError: Int {
+   case badRequest = 400
+   case notFound = 404
+   case internalServerError = 500
+   case gatewayTimeout = 504
+   // ... etc
+}
+
+/// Cases represent general causes of errors reported during requests
+enum RequestError: Int {
+   case invalidRequest = 0
+   case problemWithServer
+}
+```
 
 We don’t want to write a new class to handle mapping between each possible combination of enums, so we create a generic mapper:
 
-{% gist 8fdfc4c137539e2c806da4d430b55231 %}
+```swift
+class Mapper<Source, Destination> {
+   typealias Mapping = (Source) -> Destination?
+   
+   init(mapping: @escaping Mapping) {
+      self.mapping = mapping
+   }
+  
+   private let mapping: Mapping
+}
+```
 
 This mapper is instantiated with the types of both the source and destination enums, as well as a closure or function that performs the actual mapping. This is obviously not a terribly useful mapper, but to be fair I did say this was a contrived example!
 
 The traditional way to create and use our mapper would then be as follows:
 
-{% gist 4137640eb86f1104151fd7e0abf52e93 %}
+```swift
+let mapper = Mapper<ServerError, RequestError>(
+   mapping: { [weak self] serverError in
+      return self?.map(serverError)
+   })
+```
 
 So again, we’re putting the generic type parameters after the class name on a single line, which would quickly become an eyesore when using long type names. We’re also not indicating the roles of those types; if someone, for some reason, defined Mapper so that Destination precedes Source as the first type parameter, we would probably get stuck debugging our init code for a long time before we realised what went wrong.
 
 So here is how we can label the generic parameters, and move them out of angled brackets and into normal function parameters, by using a factory to create objects of our generic class. We write a simple factory:
 
-{% gist e348141ef088fd54fb994111b01e4f44 %}
+```swift
+class MapperFactory {
+   static func makeMapper<T,U>(
+      from sourceType: T.Type, 
+      to destinationType: U.Type,
+      by mapping: (T) -> U?) -> Mapper<T,U> {
+      return Mapper<T,U>(mapping: mapping)
+   }
+}
+```
 
 Note that the `make` function is generic: it relies on two type parameters, `T` and `U`. We reference those types in the parameter list as `T.Type` and `U.Type`. This means that, when we call this function, we will explicitly tell it what those types should be.
 
@@ -55,7 +101,14 @@ Also notice how nicely we get to label those type parameters now!
 
 Using the factory looks like this:
 
-{% gist cf4c67e2a7401c8f1158881c79d3c371 %}
+```swift
+let mapper = MapperFactory.makeMapper(
+   from: ServerError.self,
+   to: RequestError.self,
+   by: { [weak self] serverError in
+      return self?.map(serverError)
+   })
+```
 
 Maybe it doesn’t look like much, but in my view this makes the code much cleaner and more human-readable.
 
