@@ -59,7 +59,7 @@ To get in some extra practice, as a few ideas, you can do [Code Katas](http://co
 
 And for continuous learning, online courses can be good -- they come with an inherent structure to guide you through the content. 
 But depending on your goals and interests, an entire course [might be overkill](https://www.influencive.com/why-no-one-finishes-online-courses). 
-Instead of trying to become a specialist in a single field parallel to your job, I suggest that you just keep on learning many different, small things --
+Instead of trying to become a specialist in a single field parallel to your job, you might consider just learning many different, small things --
 by reading.
 Read a lot.
 Find good weekly developer blogs, browse Medium, follow interesting developers on Twitter, subscribe to newsletters, join subreddits.
@@ -115,7 +115,7 @@ But on the other hand, not everything we do should have that risk.
 Wouldn't it be good, in some cases, if we could be confident that failure, or at least catastrophic failure, is impossible?
 In particular, work is different from play;
 when someone is paying, our mistakes have an associated cost.
-If we can elminate the very possibility of making certain mistakes, why wouldn't we?
+If we can eliminate the very possibility of making certain mistakes, why wouldn't we?
 
 The Way of Bowling with the Bumpers On is about winning by cheating.
 When you follow this Way, you attempt to guarantee that you will win by making it impossible to lose.
@@ -198,6 +198,8 @@ On good days, when they could have easily pushed further, they stopped after 20 
 And on bad days, even though they had to push hard to make it, they pushed for 20 miles.
 In the end, Amundsen won, and Scott tragically died on the way back.
 
+## Steady
+
 The real story is far more nuanced, but as a fable, I think this telling succeeds at getting the entire point across.
 It's not just _slow_ that wins the race.
 It's slow and _steady_.
@@ -211,7 +213,7 @@ For example, consistency is a pretty good predictor of whether a business will s
 Similarly, any financial advisor worth their salt will tell you to [invest consistently](https://www.ellevest.com/magazine/investing/dollar-cost-averaging) over a long period of time; 
 even with small amounts, consistent deposits are far more effective than sporadic, large contributions to your savings.
 
-We can easily take take too much comfort in this wisdom, by focusing more on the _slow_ than the _steady_.
+We can easily take too much comfort in this wisdom, focusing more on the _slow_ than the _steady_.
 Consistency is difficult. It means that we must push to deliver on our bad days.
 It is only towards that end that it makes sense to hold back on our good days;
 we should take things easy when things are easy in order to gather strength for when they are not.
