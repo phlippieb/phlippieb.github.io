@@ -1,7 +1,8 @@
+---
 title: Magic version bumps for Github PRs
 link: magic-version-bumps-for-github-prs
 published_date: 2022-09-01
-___
+---
 
 This post is about a configuration that I added to my a Github repo that I'm working on to make it automatically commit a version bump whenever someone merges a PR with a special label, and the hoops that I had to jump through to make it work.
 
