@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import OpenSourceComponent from '../components/OpenSourceComponent.astro';
+
+const title = 'Open source';
 ---
-<BaseLayout>
-    <h2>Open source</h2>
+<BaseLayout pageTitle={title}>
+    <h2>{title}</h2>
     <OpenSourceComponent />
 </BaseLayout>
 

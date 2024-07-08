@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PackagesComponent from '../components/PackagesComponent.astro';
+
+const title = 'Packages';
 ---
-<BaseLayout>
-  <h2>Packages</h2>
+<BaseLayout pageTitle={title}>
+  <h2>{title}</h2>
   <PackagesComponent />
 </BaseLayout>
 
