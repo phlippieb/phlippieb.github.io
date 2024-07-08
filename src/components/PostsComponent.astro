@@ -9,7 +9,8 @@ const {limit} = Astro.props;
 const blurb = "I write technical blog posts, field reports, and opinions about Swift, software design, and programming in general";
 const posts = (await getCollection('blog'))
   .filter((p) => p.data.listed)
-  .sort((a, b) => b.data.published.getUTCDate() - a.data.published.getUTCDate())
+  .sort((a, b) => 
+    (b.data.published as any) - (a.data.published as any))
   .slice(0, limit ?? 999)
 ---
 
