@@ -20,13 +20,13 @@ const projects = (await getCollection('projects'))
 
   {projects.map((p) => 
     <Column>
-      <BoxesComponent seed={p.data.title} />
-      <div class="col">
-        <a href={p.data.url}>
+      <a href={p.data.url}>
+        <BoxesComponent seed={p.data.title} />
+        <div class="col">
           <h4>{p.data.title}</h4>
           <p>{p.data.description}</p>
-        </a>
-      </div>
+        </div>
+      </a>
     </Column>
   )}
 </Columns>

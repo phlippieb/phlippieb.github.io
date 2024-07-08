@@ -18,14 +18,14 @@ const packages = (await getCollection('packages'))
 
   {packages.map((p) => 
     <Column>
-      <BoxesComponent seed={p.data.title} />
-      <div class="post-preview">
-        <a href={p.data.url}>
+      <a href={p.data.url}>
+        <BoxesComponent seed={p.data.title} />
+        <div class="post-preview">
           <h4>{p.data.title}</h4>
           <p>{p.data.description}</p>    
-        </a>
       </div>
+      </a>
     </Column>
-    )}
+  )}
   </Columns>
   
