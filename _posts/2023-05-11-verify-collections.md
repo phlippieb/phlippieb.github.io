@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: "Swift: Verify collections with sized index sets"
 comments: true
 tags: [Swift, iOS, Testing]
