@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import BoxesComponent from './BoxesComponent.astro';
+import Columns from './Columns.astro';
+import Column from './Column.astro';
+
+const {limit} = Astro.props;
+
+const blurb = "I write technical blog posts, field reports, and opinions about Swift, software design, and programming in general";
+const posts = (await getCollection('blog'))
+  .filter((p) => p.data.listed)
+  .sort((a, b) => b.data.published.getUTCDate() - a.data.published.getUTCDate())
+  .slice(0, limit ?? 999)
+---
+
+<Columns>
+  <Column><p>{blurb}</p></Column>
+  <Column/>
+
+  {posts.map((post) => 
+    <Column>
+      <a href={"/" + post.slug }>
+        
+        <BoxesComponent seed={post.data.title} />
+        
+        <div class="post-preview">
+          <h4>{post.data.title}</h4>
+          
+          <time class="secondary" datetime={post.data.published.toISOString()}>
+            {post.data.published.toDateString()}
+          </time>
+          <p>{post.data.excerpt}</p>
+        </div>
+      </a>
+    </Column>
+  )}
+</Columns>

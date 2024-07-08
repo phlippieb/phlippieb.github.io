@@ -1,0 +1,49 @@
+---
+import Columns from './Columns.astro';
+import Column from './Column.astro';
+
+import PackagesComponent from "./PackagesComponent.astro"
+import ProjectsComponent from "./ProjectsComponent.astro"
+import SkillsComponent from "./SkillsComponent.astro"
+import OpenSourceComponent from "./OpenSourceComponent.astro"
+
+const resumeTitle = "Professional resume";
+
+const resumeBlurb = "View my full professional resume, which details my experience as a consultant.";
+
+const resumeAboutTitle = "About my resume";
+const resumeAboutBlurb = "My resume is open source, written in markdown/HTML/CSS, managed as a trunk-based-development software mini-project, and published through GitHub Pages. Read about it here.";
+---
+<h3>Resume</h3>
+
+<Columns>
+  <Column>
+    <a href="https://phlippieb.github.io/resume/">
+      <h4>{resumeTitle}</h4>
+      <p>{resumeBlurb}</p>
+    </a>
+  </Column>
+  <Column />
+  
+  <Column>
+    <a href="/resume-as-software-microproject/">
+      <h4>{resumeAboutTitle}</h4>
+      <p>{resumeAboutBlurb}</p>
+    </a>
+  </Column>
+</Columns>
+
+<h3>Skills</h3>
+<SkillsComponent />
+
+<h3>Projects</h3>
+<ProjectsComponent limit=4 />
+<a href="projects">View all projects</a>
+
+<h3>Packages</h3>
+<PackagesComponent limit=4 />
+<a href="packages">View all packages</a>
+
+<h3>Open source contributions</h3>
+<OpenSourceComponent limit=4 />
+<a href="opensource">View all open source contributions</a>
