@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import BoxesComponent from './BoxesComponent.astro';
+import Columns from './Columns.astro';
+import Column from './Column.astro';
+
+const {limit} = Astro.props;
+
+const blurb = "Side-projects outside of client work. (See my resume for details about my work as a consultant.) These are complete, standalone applications.";
+
+const projects = (await getCollection('projects'))
+//  .filter((p) => p.data.listed)
+  .sort((a, b) => b.data.number - a.data.number)
+  .slice(0, limit ?? 999);
+---
+
+<Columns>
+  <Column><p>{blurb}</p></Column>
+  <Column />
+
+  {projects.map((p) => 
+    <Column>
+      <BoxesComponent seed={p.data.title} />
+      <div class="col">
+        <a href={p.data.url}>
+          <h4>{p.data.title}</h4>
+          <p>{p.data.description}</p>
+        </a>
+      </div>
+    </Column>
+  )}
+</Columns>

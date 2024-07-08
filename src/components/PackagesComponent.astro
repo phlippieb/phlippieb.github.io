@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BoxesComponent from '../components/BoxesComponent.astro';
+import Columns from './Columns.astro';
+import Column from './Column.astro';
+
+const {limit} = Astro.props;
+
+const blurb = "Publically available helper packages, typically created as solutions to work-related challenges and then open-sourced.";
+
+const packages = (await getCollection('packages'))
+.sort((a, b) => b.data.number - a.data.number)
+.slice(0, limit ?? 999);
+---
+<Columns>
+  <Column><p>{blurb}</p></Column>
+  <Column />
+
+  {packages.map((p) => 
+    <Column>
+      <BoxesComponent seed={p.data.title} />
+      <div class="post-preview">
+        <a href={p.data.url}>
+          <h4>{p.data.title}</h4>
+          <p>{p.data.description}</p>    
+        </a>
+      </div>
+    </Column>
+    )}
+  </Columns>
+  

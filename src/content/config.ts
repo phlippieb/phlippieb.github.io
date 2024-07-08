@@ -1,0 +1,38 @@
+import { z, defineCollection } from 'astro:content';
+
+const blogCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        published: z.date(),
+        excerpt: z.string(),
+        tags: z.array(z.string()),
+        listed: z.boolean(),
+    }),
+});
+
+const packagesCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        url: z.string().url(),
+        number: z.number(),
+    }),
+});
+
+const projectsCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        url: z.string().url(),
+        number: z.number(),
+    }),
+});
+
+export const collections = {
+  'blog': blogCollection,
+  'packages': packagesCollection,
+  'projects': projectsCollection,
+};
