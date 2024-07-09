@@ -21,7 +21,7 @@ const packages = (await getCollection('packages'))
       <a href={p.data.url}>
         <BoxesComponent seed={p.data.title} />
         <div class="post-preview">
-          <h4>{p.data.title}</h4>
+          <h4>{p.data.title} ↗</h4>
           <p>{p.data.description}</p>    
       </div>
       </a>
