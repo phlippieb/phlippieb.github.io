@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostsComponent from '../components/PostsComponent.astro';
 import WorkComponent from '../components/WorkComponent.astro';
+import FeedComponent from '../components/FeedComponent.astro';
 import AboutComponent from '../components/AboutComponent.astro';
 import Columns from '../components/Columns.astro';
 import Column from '../components/Column.astro';
@@ -16,10 +17,14 @@ const topBlurb = "Mobile software engineer with 8+ years' experience creating di
 	
 	<h2>Posts</h2>
 	<PostsComponent limit="4" />
-	<a href="posts">View all posts</a>
+	<a href="/posts">View all posts</a>
 	
 	<h2>Work</h2>
 	<WorkComponent />
+
+	<h2>Feed</h2>
+	<FeedComponent limit="4" />
+	<a href="/feed">View all updates</a>
 	
 	<h2>About me</h2>
 	<AboutComponent />
