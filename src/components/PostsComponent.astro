@@ -6,7 +6,7 @@ import Column from './Column.astro';
 
 const {limit} = Astro.props;
 
-const blurb = "I write technical blog posts, field reports, and opinions about Swift, software design, and programming in general";
+const blurb = "I write technical blog posts, field reports, and opinions about Swift, software design, and programming in general. Nothing here is written by an AI.";
 const posts = (await getCollection('blog'))
   .filter((p) => p.data.listed)
   .sort((a, b) => 
