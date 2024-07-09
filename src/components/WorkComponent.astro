@@ -14,8 +14,15 @@ const resumeBlurb = "View my full professional resume, which details my experien
 const resumeAboutTitle = "About my resume";
 const resumeAboutBlurb = "My resume is open source, written in markdown/HTML/CSS, managed as a trunk-based-development software mini-project, and published through GitHub Pages. Read about it here.";
 ---
-<h3>Resume</h3>
+<h3>Projects</h3>
+<ProjectsComponent limit=4 />
+<a href="/projects">View all projects</a>
 
+<h3>Packages</h3>
+<PackagesComponent limit=4 />
+<a href="/packages">View all packages</a>
+
+<h3>Resume</h3>
 <Columns>
   <Column>
     <a href="https://resume.phlippieb.dev">
@@ -35,14 +42,6 @@ const resumeAboutBlurb = "My resume is open source, written in markdown/HTML/CSS
 
 <h3>Skills</h3>
 <SkillsComponent />
-
-<h3>Projects</h3>
-<ProjectsComponent limit=4 />
-<a href="/projects">View all projects</a>
-
-<h3>Packages</h3>
-<PackagesComponent limit=4 />
-<a href="/packages">View all packages</a>
 
 <h3>Open source contributions</h3>
 <OpenSourceComponent limit=4 />
