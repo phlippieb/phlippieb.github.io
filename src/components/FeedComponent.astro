@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Columns from './Columns.astro';
+import Column from './Column.astro';
+
+const {limit} = Astro.props;
+
+const items = (await getCollection('feed'))
+  .sort((a, b) => 
+    (b.data.date as any) - (a.data.date as any))
+  .slice(0, limit ?? 999)
+---
+<Columns>
+  {items.map((item) => 
+    <Column>
+      <a href={"/feed/" + item.slug }>
+        <div class="post-preview">
+          <h4>{item.data.title}</h4>
+          
+          <time class="secondary" datetime={item.data.date.toISOString()}>
+            {item.data.date.toDateString()}
+          </time>
+          <p>{item.data.excerpt}</p>
+        </div>
+      </a>
+    </Column>
+  )}
+</Columns>

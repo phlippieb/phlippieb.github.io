@@ -31,8 +31,19 @@ const projectsCollection = defineCollection({
     }),
 });
 
+const feedCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        date: z.date(),
+        tags: z.array(z.string()),
+        excerpt: z.string(),
+    }),
+})
+
 export const collections = {
   'blog': blogCollection,
   'packages': packagesCollection,
   'projects': projectsCollection,
+  'feed': feedCollection, 
 };

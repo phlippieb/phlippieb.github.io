@@ -1,12 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Columns from '../components/Columns.astro';
-import Column from '../components/Column.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Columns from '../../components/Columns.astro';
+import Column from '../../components/Column.astro';
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog');
-  return blogEntries.map(entry => ({
+  const entries = await getCollection('feed');
+  return entries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
 }
@@ -19,8 +19,8 @@ const { Content } = await entry.render();
     <Column>
       <h2>{entry.data.title}</h2>
       
-      <time class="secondary" datetime={entry.data.published.toISOString()}>
-        {entry.data.published.toDateString()}
+      <time class="secondary" datetime={entry.data.date.toISOString()}>
+        {entry.data.date.toDateString()}
       </time>
 
      <Content />
