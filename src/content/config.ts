@@ -45,4 +45,5 @@ export const collections = {
   'blog': blogCollection,
   'packages': packagesCollection,
   'projects': projectsCollection,
+  'feed': feedCollection, 
 };

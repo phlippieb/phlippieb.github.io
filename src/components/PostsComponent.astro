@@ -20,7 +20,7 @@ const posts = (await getCollection('blog'))
 
   {posts.map((post) => 
     <Column>
-      <a href={"/" + post.slug }>
+      <a href={"/posts/" + post.slug }>
         
         <BoxesComponent seed={post.data.title} />
         

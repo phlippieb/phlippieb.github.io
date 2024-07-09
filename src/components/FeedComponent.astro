@@ -5,14 +5,13 @@ import Column from './Column.astro';
 
 const {limit} = Astro.props;
 
-const blurb = "Bite-sized updates";
 const items = (await getCollection('feed'))
   .sort((a, b) => 
     (b.data.date as any) - (a.data.date as any))
   .slice(0, limit ?? 999)
 ---
 <Columns>
-  {items.map((item, i) => 
+  {items.map((item) => 
     <Column>
       <a href={"/feed/" + item.slug }>
         <div class="post-preview">
