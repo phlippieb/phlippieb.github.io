@@ -5,9 +5,9 @@ tags: [generics, protocol, protocol witness, swift]
 listed: false
 excerpt: Protocol witnesses, as we have discussed them so far, already offer a notable benefit over protocols. With normal protocols, a class can only conform to a protocol in one way. With protocol witnesses, on the other hand, we create an explicit instance for each way that a class conforms to a protocol, so we can create arbitrarily many different implementations of a single class to a single protocol.
 ---
-This is part of a [series on protocol witnesses in Swift](/swift-protocol-witnesses/).
+This is part of a [series on protocol witnesses in Swift](/posts/swift-protocol-witnesses/).
 
-[<-- Example 2: Instance-bound implementation](/swift-protocol-witnesses/swift-protocol-witnesses-2/)
+[<-- Example 2: Instance-bound implementation](/posts/swift-protocol-witnesses/swift-protocol-witnesses-2/)
 
 Protocol witnesses, as we have discussed them so far, already offer a notable benefit over protocols. With normal protocols, *a class can only conform to a protocol in one way*. With protocol witnesses, on the other hand, we create an explicit instance for each “way” that a class conforms to a protocol, so we can create arbitrarily many different “implementations” of a single class to a single protocol.
 
@@ -38,4 +38,4 @@ Admittedly, the `debug` scenario is a little contrived, but the point is: the sa
 
 So far so good, but also so far this has had nothing to do with generics. Isn’t this series about protocols with generics? Why yes! That brings us to our next example.
 
-[Example 4: With generics -->](/swift-protocol-witnesses/swift-protocol-witnesses-4/)
+[Example 4: With generics -->](/posts/swift-protocol-witnesses/swift-protocol-witnesses-4/)

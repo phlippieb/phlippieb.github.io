@@ -11,14 +11,14 @@ As much as I think that Swift is just *the raddest*, there is one part of the la
 
 That's a mouthful. Let's looks at some code examples instead. 
 
-[Example 1: The basics](/swift-protocol-witnesses/swift-protocol-witnesses-1/)
+[Example 1: The basics](/posts/swift-protocol-witnesses/swift-protocol-witnesses-1/)
 
-[Example 2: Instance-bound implementation](/swift-protocol-witnesses/swift-protocol-witnesses-2/)
+[Example 2: Instance-bound implementation](/posts/swift-protocol-witnesses/swift-protocol-witnesses-2/)
 
-[Example 3: Multiple implementations](/swift-protocol-witnesses/swift-protocol-witnesses-3/)
+[Example 3: Multiple implementations](/posts/swift-protocol-witnesses/swift-protocol-witnesses-3/)
 
-[Example 4: With generics](/swift-protocol-witnesses/swift-protocol-witnesses-4/)
+[Example 4: With generics](/posts/swift-protocol-witnesses/swift-protocol-witnesses-4/)
 
-[Example 5: An implementation per type](/swift-protocol-witnesses/swift-protocol-witnesses-5/)
+[Example 5: An implementation per type](/posts/swift-protocol-witnesses/swift-protocol-witnesses-5/)
 
-[Example 6: Composed protocols](/swift-protocol-witnesses/swift-protocol-witnesses-6/)
+[Example 6: Composed protocols](/posts/swift-protocol-witnesses/swift-protocol-witnesses-6/)

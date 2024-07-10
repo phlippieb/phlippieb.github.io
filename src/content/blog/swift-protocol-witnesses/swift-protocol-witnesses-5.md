@@ -5,9 +5,9 @@ tags: [generics, protocol, protocol witness, swift]
 listed: false
 excerpt: As we mentioned in a previous example, a limitation of normal protocols is that each class can only implement a protocol once. Here is an example of a protocol-like concept that is only implementable using a protocol witness.
 ---
-This is part of a [series on protocol witnesses in Swift](/swift-protocol-witnesses/).
+This is part of a [series on protocol witnesses in Swift](/posts/swift-protocol-witnesses/).
 
-[<-- Example 4: With generics](/swift-protocol-witnesses/swift-protocol-witnesses-4/)
+[<-- Example 4: With generics](/posts/swift-protocol-witnesses/swift-protocol-witnesses-4/)
 
 
 As we mentioned in a previous example, a limitation of normal protocols is that each class can only implement a protocol once. Here is an example of a protocol-like concept that is only implementable using a protocol witness.
@@ -68,4 +68,4 @@ let f: Float = Converting.intToFloat.convert(1)
 
 Your next question might be: can I actually replace *all* my protocols with protocol witnesses? One particular issue that we haven’t discussed yet is whether we can model protocol inheritance in protocol witness world. It can be quite a crucial point, depending on your needs. As always, let’s see in the next example.
 
-[Example 6: Composed protocols -->](/swift-protocol-witnesses/swift-protocol-witnesses-6/)
+[Example 6: Composed protocols -->](/posts/swift-protocol-witnesses/swift-protocol-witnesses-6/)

@@ -5,14 +5,14 @@ tags: [generics, protocol, protocol witness, swift]
 listed: false
 excerpt: It’s time to deal with generics, and this is really where the advantage of the protocol witness pattern becomes apparent. Protocol witnesses, being expressed as dirt-basic structs, make it much less confusing to work with generic types. To highlight the differences, we will build up this example with the two paradigms shown side-by-side, almost.
 ---
-This is part of a [series on protocol witnesses in Swift](/swift-protocol-witnesses/).
+This is part of a [series on protocol witnesses in Swift](/posts/swift-protocol-witnesses/).
 
-[<-- Example 3: Multiple implementations](/swift-protocol-witnesses/swift-protocol-witnesses-3/)
+[<-- Example 3: Multiple implementations](/posts/swift-protocol-witnesses/swift-protocol-witnesses-3/)
 
 
 It’s time to deal with generics, and this is really where the advantage of the protocol witness pattern becomes apparent. Protocol witnesses, being expressed as dirt-basic structs, make it much less confusing to work with generic types. To highlight the differences, we will build up this example with the two paradigms shown side-by-side, almost.
 
-In this example, we’ll define an abstract protocol for a state machine (borrowing from a [previous post](/a-simple-state-machine-in-swift/)).
+In this example, we’ll define an abstract protocol for a state machine (borrowing from a [previous post](/posts/a-simple-state-machine-in-swift/)).
 
 ## Abstract dependency definition
 
@@ -174,4 +174,4 @@ Despite the introduction of generics, this code is essentially the same as what 
 
 Hopefully this example has demonstrated how protocol witnesses, once you can grok the basic concept, allow us to use protocol-like concepts with generics without the headaches that can so easily accompany `associatedtype`s in protocols. We’ve also covered the fact that they allow us to write multiple implementations of the same protocol, with a slightly contrived example. We can now dive deeper into that point. For a generic protocol, protocol witnesses allow us to provide per-type conformance.
 
-[Example 5: An implementation per type -->](/swift-protocol-witnesses/swift-protocol-witnesses-5/)
+[Example 5: An implementation per type -->](/posts/swift-protocol-witnesses/swift-protocol-witnesses-5/)

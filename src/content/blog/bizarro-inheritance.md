@@ -134,4 +134,4 @@ extension MyShape {
 }
 ```
 
-This is similar to how the [Protocol Witness](/swift-protocol-witnesses/) pattern gives us a lower level, more explicit way to think about protocols. Language features like inheritance and protocol conformance help us write less code, but sacrifices some customisation by opting for sensible default implementations. We can always go down to a lower level and make things explicit.
+This is similar to how the [Protocol Witness](/posts/swift-protocol-witnesses/) pattern gives us a lower level, more explicit way to think about protocols. Language features like inheritance and protocol conformance help us write less code, but sacrifices some customisation by opting for sensible default implementations. We can always go down to a lower level and make things explicit.
