@@ -122,7 +122,7 @@ struct MyModel: Codable {
 
 We can use this pattern to mark a field as “skipped” so that Swift can synthesise protocol conformance for our types. Aside from Codable, we can also do this Hashable (e.g. if a struct contains fields that are not Hashable themselves), and so on.
 
-But aside from retaining automatic protocol conformance synthesis, we can also use this pattern to change the behaviour of our code. Let’s consider a NotHashes property wrapper. We can, of course, wrap any property to skip hashing it, including properties that would otherwise modify an object’s hash. 
+But aside from retaining automatic protocol conformance synthesis, we can also use this pattern to change the behaviour of our code. Let’s consider a NotHashed property wrapper. We can, of course, wrap any property to skip hashing it, including properties that would otherwise modify an object’s hash. 
 
 So say we have a model like this:
 

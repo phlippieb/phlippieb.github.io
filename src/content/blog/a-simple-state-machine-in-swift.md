@@ -123,7 +123,7 @@ class StandardStateMachine<State: StateMachineState>: StateMachine {
 }
 ```
 
-Relying on the state type to tell us how to determine the next state for a given event has allowed us to clean up this class a bit. No need to pass a closure to specify state logic anymore.
+Relying on the state type to tell us how to determine the next state for a given event has allowed us to clean up this class a bit. No need to pass a closure to specify state logic any more.
 
 Reworking our traffic light example:
 

@@ -10,7 +10,7 @@ This is part of a [series on protocol witnesses in Swift](/posts/swift-protocol-
 
 # Example 1: The basics
 
-To illustrate the concept of protocol witnesses, we’ll start with an example that’s so simple that it’s almost cheating. We’ll first show some code “before”, using traditional Swift protocols to setup a little ecosystem. Then we’ll convert the system to “after”, so that it is defined using protocol witnesses instead.
+To illustrate the concept of protocol witnesses, we’ll start with an example that’s so simple that it’s almost cheating. We’ll first show some code “before”, using traditional Swift protocols to set up a little ecosystem. Then we’ll convert the system to “after”, so that it is defined using protocol witnesses instead.
 
 ## Before
 

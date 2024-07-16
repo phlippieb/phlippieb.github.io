@@ -6,7 +6,7 @@ listed: true
 excerpt: How we eschewed pre-built routing frameworks for a hand-rolled system based on protocols, enums and default implementations that is tailor made to our codebase
 ---
 
-_How we eschewed pre-built routing frameworks for a hand-rolled system based on protocols, enums and default implementations that is tailor made to our codebase_
+_How we eschewed pre-built routing frameworks for a hand-rolled system based on protocols, enums and default implementations that is tailor-made to our codebase_
 
 Developing software is a process, and so is becoming a better developer. I have fallen in most of the pitfalls that I have encountered on the iOS development trail so far, and I’m still slowly climbing out of them as I continue. It’s all part of the process, right?
 
@@ -55,7 +55,7 @@ So we set out to design a routing solution with the following requirements:
 
 # Implementation
 
-First off, let’s define protocols for the core concepts. What are the core concepts? Well, let’s think about what want to achieve: we want a way to go to a screen. So we are dealing with the concept of a a place to go to, or a **destination**. And we also need a thing that will take us to that destination, which we will simply call a **router**.
+First off, let’s define protocols for the core concepts. What are the core concepts? Well, let’s think about what want to achieve: we want a way to go to a screen. So we are dealing with the concept of a place to go to, or a **destination**. And we also need a thing that will take us to that destination, which we will simply call a **router**.
 
 Here is a protocol for a destination:
 

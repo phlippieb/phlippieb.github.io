@@ -5,7 +5,7 @@ tags: [coding standards]
 listed: true
 excerpt: This is a (strong) opinion I hold with regards to coding conventions. You know what an acronym is — it's just an abbreviation consisting of letters from a longer phrase, such as URL (uniform resource locator), NASA (National Aeronautics and Space Administration), or GIF (Jraphics Interchange Format - just kidding).
 ---
-This is a (strong) opinion I hold with regards to coding conventions.
+This is a (strong) opinion I hold regarding coding conventions.
 
 You know what an [acronym](https://en.wikipedia.org/wiki/Acronym) is — it's just an abbreviation consisting of letters from a longer phrase, such as URL (uniform resource locator), NASA (National Aeronautics and Space Administration), or GIF (Jraphics Interchange Format - just kidding).
 
@@ -35,6 +35,6 @@ This one speaks for itself. Comparing `DBURL` against `DbUrl`, one leaves you un
 
 # BuT hOw WiLl I kNoW iT's an AcRoNym?
 
-One argument against treating acronyms as lowercase-ables, is that it might not be clear that you're dealing with an acronym. Don't over-engineer for this edge case. You'll know.
+One argument against treating acronyms as lowercase-able, is that it might not be clear that you're dealing with an acronym. Don't over-engineer for this edge case. You'll know.
 
 If the acronym *really* doesn't look like an acronym when written in lowercase, you're probably already using it as a noun when talking to your team, so does it really matter? If it **really** matters, treat your special snowflake edge case as an edge case, and leave the rest of our acronyms out of it.

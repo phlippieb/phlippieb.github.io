@@ -6,7 +6,7 @@ listed: true
 excerpt: When you really think about it, what *is* inheritance in object orientation? Intuitively, we tend to think of it as an "is a"-relationship. A car *is a* vehicle. A house *is a* building. A dog *is an* animal. But from a programming language perspective, the way it works can be expressed in a different way — as "has a" + fancy syntax.
 ---
 
-When you really think about it, what *is* inheritance in object orientation? Intuitively, we tend to think of it as an "is a"-relationship. A car *is a* vehicle. A house *is a* building. A dog *is an* animal. But from a programming language perspective, the way it works can be expressed in a different way — as "has a" + fancy syntax.
+When you really think about it, what *is* inheritance in object orientation? Intuitively, we tend to think of it as an "is a"-relationship. A car *is a* vehicle. A house *is a* building. A dog *is an* animal. But from a programming language perspective, the way it works can be expressed differently — as "has a" + fancy syntax.
 
 Let's look at the car/vehicle relationship and turn it on its head. Traditionally, you'd express it like this (Pretend we don't need initialisers):
 

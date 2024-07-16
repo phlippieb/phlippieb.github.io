@@ -5,7 +5,7 @@ tags: [ci/cd,GitHub Actions, Fastlane]
 listed: true
 excerpt: This post is about a configuration that I added to my a Github repo that I'm working on to make it automatically commit a version bump whenever someone merges a PR with a special label, and the hoops that I had to jump through to make it work.
 ---
-This post is about a configuration that I added to my a Github repo that I'm working on to make it automatically commit a version bump whenever someone merges a PR with a special label, and the hoops that I had to jump through to make it work.
+This post is about a configuration that I added to a GitHub repo that I'm working on to make it automatically commit a version bump whenever someone merges a PR with a special label, and the hoops that I had to jump through to make it work.
 
 For the tl;dr, skip to the last section ("Final solution").
 
@@ -14,7 +14,7 @@ For the tl;dr, skip to the last section ("Final solution").
 The idea was born from a frustrating situation that I started to notice on my current project. On this project, the `master` branch is protected, so you cannot push to `master`; you must open a PR. The following checks apply:
 
 1. Your BitRise build must pass
-2. Your branch must be up to date
+2. Your branch must be up-to-date
 3. You need at least 2 approvals
 4. Reviews are dismissed when you push changes
 
@@ -30,7 +30,7 @@ If your team is particularly productive and attempting to merge many PRs, this r
 
 One way to analyse the existing problem is to say that, instead of declaring our *intent* ("this PR should be accompanied by a patch version bump"), we were doing the actual work ("this PR bumps the module to 13.0.2"). So if we can somehow change that, life would be better. 
 
-I could picture an ideal solution where, when I open a PR, I just have to indicate to my team and to Github itself what kind of bump should occur. When the PR is merged, Github itself should perform the bump.
+I could picture an ideal solution where, when I open a PR, I just have to indicate to my team and to GitHub itself what kind of bump should occur. When the PR is merged, GitHub itself should perform the bump.
 
 This way, my team can still verify that the PR is associated with the correct *type* of version bump (major, minor or patch). Moreover, even if my PR gets outdated by someone else merging theirs, I only need to merge master back into mine. Crucially, this does not dismiss my existing approvals. And as a bonus, if this is implemented a certain way, we can even enforce that people remember to indicate their version bumps for the PR checks to pass; otherwise, they simply won't be able to merge.
 
@@ -54,7 +54,7 @@ I opted to use labels on the PR itself. I created four labels: `bump:major`, `bu
 
 The next question is how to ensure that the team remembers to use the labels. After all, this is an opportunity to take a check that was purely convention (reviewers should look through the changes and make sure the author didn't forget the bump) and make it automatic.
 
-This was actually quite easy. Github user `mheap` has created a very useful action called ["Require Labels"](https://github.com/marketplace/actions/require-labels), which does most of the work. I just had to create a check in our repository that specifically check for one of the labels I defined before. The [full action](https://github.com/phlippieb-discovery/test-podbump-on-merge/blob/main/.github/workflows/has-version-bump-label.yml) on my side looks like this:
+This was actually quite easy. GitHub user `mheap` has created a very useful action called ["Require Labels"](https://github.com/marketplace/actions/require-labels), which does most of the work. I just had to create a check in our repository that specifically check for one of the labels I defined before. The [full action](https://github.com/phlippieb-discovery/test-podbump-on-merge/blob/main/.github/workflows/has-version-bump-label.yml) on my side looks like this:
 
 ```yml
 name: Has version-bump label
@@ -114,7 +114,7 @@ It also hooks into another action that lives on the same repo, called `bump-vers
 
 The matter of actually performing the version bump is very specific to your tech and project. In my case, working on a CocoaPods-based iOS module, it was a matter of invoking a Fastlane command, which updates a Podspec file and re-installs the module using CocoaPods.
 
-When doing builds on an iOS project, you often need CI actions to run on a Mac machine, which is quite expensive compared to a Linux machine. In this case, we could run the action on Ubuntu. The trick was to create a separate, dedicated Fastfile just for Github Actions; this Fastfile resides inside .github/fastlane.
+When doing builds on an iOS project, you often need CI actions to run on a Mac machine, which is quite expensive compared to a Linux machine. In this case, we could run the action on Ubuntu. The trick was to create a separate, dedicated Fastfile just for GitHub Actions; this Fastfile resides inside .github/fastlane.
 
 If you're interested, this is what the Fastfile looks like:
 
@@ -131,7 +131,7 @@ end
 
 The fastlane action itself expects a string to specify the type of bump, which should be either "major", "minor" or "patch".
 
-So how do we invoke fastlane from a Github action?
+So how do we invoke fastlane from a GitHub action?
 
 ## Creating a reusable bumper action
 
@@ -218,7 +218,7 @@ Now I could see that, when I merge a PR with a 'bump:patch' label, the action is
 
 It was very hard.
 
-Github makes it nearly impossible for a bot to push to a protected branch.
+GitHub makes it nearly impossible for a bot to push to a protected branch.
 
 I tried lots of things that did not work, including
 
@@ -227,15 +227,15 @@ I tried lots of things that did not work, including
 - Restricting the users who can push to master and adding the bot there
 - Using any of the pre-built actions I could find on the Actions Marketplace that supposedly allows pushing to restricted branches, such as [this one](https://github.com/marketplace/actions/push-to-status-check-protected-branches) or [this one](https://github.com/marketplace/actions/push-to-a-protected-branch)
 
-The problem was that our master branch is protected, and to date, Github just doesn't allow bots to bypass protection rules. There have been several discussions asking Github to implement a workaround, touting use cases very much like this one, but the current response is that Github will not do so. See [this discussion](https://github.com/orgs/community/discussions/25305), or [this one](https://github.com/orgs/community/discussions/13836), or [this one](https://github.com/orgs/community/discussions/27217).
+The problem was that our master branch is protected, and to date, GitHub just doesn't allow bots to bypass protection rules. There have been several discussions asking GitHub to implement a workaround, touting use cases very much like this one, but the current response is that GitHub will not do so. See [this discussion](https://github.com/orgs/community/discussions/25305), or [this one](https://github.com/orgs/community/discussions/13836), or [this one](https://github.com/orgs/community/discussions/27217).
 
 One of these discussions had a [terse but helpful comment](https://github.com/orgs/community/discussions/13836#discussioncomment-3175732):
 
-> So you can do one of two things, build a github app and grant it access to bypass branch merge rules, or have a user who can and have them craete a PAT, store it in the repos as a secret and use that PAT in the action which will act like the administrator bypassing the branch rules.
+> So you can do one of two things, build a github app and grant it access to bypass branch merge rules, or have a user who can and have them create a PAT, store it in the repos as a secret and use that PAT in the action which will act like the administrator bypassing the branch rules.
 
 At this point, I have spent an inordinate amount of time trying to make my magic version bumps work, so I opted for a less-than-ideal solution: using my own personal access token (PAT). It should be clear why this isn't the best solution (if I update my token or leave the team, the CI breaks), but I couldn't justify spending much more time on this task.
 
-All I had to do now was to create a PAT for this purpose and hook it into the action. To create the PAT, I headed to [my token settings](https://github.com/settings/tokens) and created a new one, only selecting the `repo` scope. Then, to hook it into the workflow, I decided to use a [prebuilt push action](https://github.com/ad-m/github-push-action). I added this to the end of the "Bump Podspec" worflow:
+All I had to do now was to create a PAT for this purpose and hook it into the action. To create the PAT, I headed to [my token settings](https://github.com/settings/tokens) and created a new one, only selecting the `repo` scope. Then, to hook it into the workflow, I decided to use a [prebuilt push action](https://github.com/ad-m/github-push-action). I added this to the end of the "Bump Podspec" workflow:
 
 ```yaml
       ...
@@ -358,7 +358,7 @@ jobs:
 
 Notes:
 1. `persist-credentials: false` is required to allow you to push your changes using your own token near the end
-2. Replace `<YOUR_USERNAME>`, `<YOUR_EMAIL>` and `<YOUR_TOKEN>` with those of any agent that is allowed to perform git clones. This might be an organisation bot, or maybe even the Github bot; I didn't check
+2. Replace `<YOUR_USERNAME>`, `<YOUR_EMAIL>` and `<YOUR_TOKEN>` with those of any agent that is allowed to perform git clones. This might be an organisation bot, or maybe even the GitHub bot; I didn't check
 3. Replace this step with your mechanism for performing a version bump if needed
 4. Add the files that get updated when you perform a version bump. The ones in this script are specific to iOS projects
 5. Here, use the name of the personal access token you created in step 1. This is the part where a bot doesn't work.
