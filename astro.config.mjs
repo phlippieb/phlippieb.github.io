@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 // import lightTheme from './xcode-default-light-theme.json';
 
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
@@ -8,7 +9,8 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: 'nord',
-      wrap: true,
-    },
+      wrap: true
+    }
   },
+  integrations: [sitemap()]
 });
