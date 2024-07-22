@@ -3,7 +3,7 @@ title: "Publish your iOS app faster by offloading key features"
 published: 2024-07-22
 tags: [Swift, iOS]
 listed: true
-excerpt: todo
+excerpt: If you plan your project well, you can include key functionalities without needing to do much custom implementation, by relying on vanilla features included in the iOS development ecosystem. This post is about some things you can offload to get your app out the door faster.
 ---
 A [minimum viable product](https://en.wikipedia.org/wiki/Minimum_viable_product) (MVP) is a product containing the least amount of functionality that can be shipped to users so that your software still stands on its own. Aiming for a small initial release can be great; you get to market sooner, putting you in a better position to figure out where to invest your effort.
 
