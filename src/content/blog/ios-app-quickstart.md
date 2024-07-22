@@ -1,25 +1,25 @@
 ---
-title: "Publish an iOS app fast by offloading key features"
+title: "Publish your iOS app faster by offloading key features"
 published: 2024-07-22
 tags: [Swift, iOS]
 listed: true
 excerpt: todo
 ---
-An MVP is a minimum viable product. It is the least amount of functionality that can be shipped to users so that your software still stands on its own. Aiming for a small initial release can be great; you get to market sooner, putting you in a better position to figure out where to invest your effort.
+A [minimum viable product](https://en.wikipedia.org/wiki/Minimum_viable_product) (MVP) is a product containing the least amount of functionality that can be shipped to users so that your software still stands on its own. Aiming for a small initial release can be great; you get to market sooner, putting you in a better position to figure out where to invest your effort.
 
-Implementing an MVP is not just about cutting out features, though. If you plan your project well, you can include key functionalities without needing to do much custom implementation, by offloading them. This post is about some things you can offload to get your app out the door faster.
+Implementing an MVP is not just about cutting out features, though. If you plan your project well, you can include key functionalities without needing to do much custom implementation, by relying on vanilla features included in the iOS development ecosystem. This post is about some things you can offload to get your app out the door faster.
 
 ## Authentication and a backend: use CloudKit instead
 
-If the main reason why you need your users to sign in is so that you can sync their data over a backend service, re-think this requirement, at least for your first release. If you use CoreData or SwiftData for local persistance, then roping in CloudKit is very easy. Your target audience will likely be the only users using their devices, so associating their data with their iCloud accounts is not only reasonable, it also provides a more seamless user experience.
+If the main reason why you need your users to sign in is so that you can sync their data over a backend service, re-think this requirement, at least for your first release. If you use CoreData or SwiftData for local persistance, then roping in CloudKit is very easy. Your target audience will likely be the only users using their devices (i.e. multiple user accounts inside your app is probably an edge case that you don't need to cater for yet), so associating their data with their iCloud accounts is not only reasonable, it also provides a more seamless user experience.
 
 ## Custom UI: use vanilla SwiftUI instead
 
-At some point, you'll want your app to have its character in terms of look and feel. But good UI requires thoughtful design, a complete design system that responds well to different device sizes and accessibility use cases, et cetera. As it happens, Apple devices already ship with such a system, and you get it for free when you use SwiftUI components for their intended purposes. It may seem a bit vanilla, but Apple have put a lot of thought and care into their stock UI system, enabling you to build and release an app by only worrying about the functionality at first. The look and feel can always be overhauled later. 
+At some point, you'll want your app to have its own character in terms of look and feel. But good UI requires thoughtful design, a complete design system that responds well to different device sizes and accessibility use cases, et cetera. As it happens, Apple devices already ship with such a system, and you get it for free when you use SwiftUI components for their intended purposes. It may seem a bit vanilla, but Apple have put a lot of thought and care into their stock UI system, enabling you to build and release an app by only worrying about the functionality at first. The look and feel can always be overhauled later. 
 
 ## Settings screen: use a settings bundle instead
 
-Okay, full disclosure, learning how to set up a [settings bundle](src/content/blog/ios-app-quickstart.md) might take some getting used to if you've never done it before. But once you get the hang of it, you'll find that iOS provides a fairly capable system for users to configure options for your app, and for you to access those configurations. Plus, and this is just my opinion, it'll make your app feel more like a serious iOS app.
+Okay, full disclosure, learning how to set up a [settings bundle](src/content/blog/ios-app-quickstart.md) might take some getting used to if you've never done it before. But once you get the hang of it, you'll find that iOS provides a fairly capable system for users to configure options for your app, and for you to access those configurations. Plus, and this is just my opinion, it'll make your app feel more like a serious entry in the iOS ecosystem.
 
 ## In-app webview: open in external browser instead
 

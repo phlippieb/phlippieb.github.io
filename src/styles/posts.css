@@ -129,9 +129,9 @@ nav a {
   width: 50%;
 }
 
-.col a {
-  text-decoration: none;
-}
+/* .col a { */
+  /* text-decoration: none; */
+/* } */
 
 .post-preview p {
   display: -webkit-box;
