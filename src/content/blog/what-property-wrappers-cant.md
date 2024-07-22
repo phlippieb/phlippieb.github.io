@@ -133,7 +133,7 @@ class MyScreen: UIViewController {
 }
 ```
 
-Critically, you don't start the listener immediately, maybe to avoid performance issues, but to be safe, you always stop it when the class is deinitialised. This seems like a dilligent and responsible choice, but you have now introduced a crash. If you deinit the screen without having lazily created the keyboard listener first, the lazy initialiser (which references self) will crash.
+Critically, you don't start the listener immediately, maybe to avoid performance issues, but to be safe, you always stop it when the class is deinitialised. This seems like a diligent and responsible choice, but you have now introduced a crash. If you deinit the screen without having lazily created the keyboard listener first, the lazy initialiser (which references self) will crash.
 
 The exact requirements for this crash seem to be as follows:
 

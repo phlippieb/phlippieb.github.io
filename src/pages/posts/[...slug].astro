@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostLayout from '../../layouts/PostLayout.astro';
 import Columns from '../../components/Columns.astro';
 import Column from '../../components/Column.astro';
 
@@ -14,10 +14,10 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-<BaseLayout pageTitle={entry.data.title}>
+<PostLayout pageTitle={entry.data.title}>
   <Columns>
     <Column>
-      <h2>{entry.data.title}</h2>
+      <h1>{entry.data.title}</h1>
       
       <time class="secondary" datetime={entry.data.published.toISOString()}>
         {entry.data.published.toDateString()}
@@ -26,4 +26,4 @@ const { Content } = await entry.render();
      <Content />
     </Column>
   </Columns>
-</BaseLayout>
+</PostLayout>

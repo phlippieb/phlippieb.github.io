@@ -6,11 +6,11 @@ listed: false
 excerpt: To illustrate the concept of protocol witnesses, we’ll start with an example that’s so simple that it’s almost cheating. We’ll first show some code “before”, using traditional Swift protocols to setup a little ecosystem. Then we’ll convert the system to “after”, so that it is defined using protocol witnesses instead.
 ---
 
-This is part of a [series on protocol witnesses in Swift](/swift-protocol-witnesses/).
+This is part of a [series on protocol witnesses in Swift](/posts/swift-protocol-witnesses/).
 
-# Example 1: The basics
+## Example 1: The basics
 
-To illustrate the concept of protocol witnesses, we’ll start with an example that’s so simple that it’s almost cheating. We’ll first show some code “before”, using traditional Swift protocols to setup a little ecosystem. Then we’ll convert the system to “after”, so that it is defined using protocol witnesses instead.
+To illustrate the concept of protocol witnesses, we’ll start with an example that’s so simple that it’s almost cheating. We’ll first show some code “before”, using traditional Swift protocols to set up a little ecosystem. Then we’ll convert the system to “after”, so that it is defined using protocol witnesses instead.
 
 ## Before
 
@@ -104,4 +104,4 @@ Lastly, we needed to inject our concrete implementation of the protocol into our
 
 We cheated a little bit with this example. Our protocol required the method `foo` to be an *instance member*, but our conforming type provided it as a *static member*. This made it simpler to write the closure when creating an implementation of the protocol. But in practice, we will often need to conform types to protocols by leveraging the *instance members* of those types — in other words, by calling non-static methods, or updating non-static properties on individual objects. Let’s look at another example that addresses this need in the next example.
 
-[Example 2: Instance-bound implementation -->](/swift-protocol-witnesses/swift-protocol-witnesses-2/)
+[Example 2: Instance-bound implementation -->](/posts/swift-protocol-witnesses/swift-protocol-witnesses-2/)

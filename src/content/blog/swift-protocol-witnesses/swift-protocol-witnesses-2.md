@@ -5,9 +5,9 @@ tags: [generics, protocol, protocol witness, swift]
 listed: false
 excerpt: For this example, we’ll create a little ecosystem around a logger dependency. From our client’s perspective, a logger must simply be able to log messages. But our concrete logger implementation will have its own state, and because of that, we will be forced to associate the logger protocol with an instance of a concrete logger. This means that we won’t be allowed to cheat by giving the logger a static implementation, like we did in the previous example.
 ---
-This is part of a [series on protocol witnesses in Swift](/swift-protocol-witnesses/).
+This is part of a [series on protocol witnesses in Swift](/posts/swift-protocol-witnesses/).
 
-[<-- Example 1: The basics](/swift-protocol-witnesses/swift-protocol-witnesses-1/)
+[<-- Example 1: The basics](/posts/swift-protocol-witnesses/swift-protocol-witnesses-1/)
 
 For this example, we’ll create a little ecosystem around a logger dependency. From our client’s perspective, a logger must simply be able to log messages. But our concrete logger implementation will have its own state, and because of that, we will be forced to associate the logger protocol with an instance of a concrete logger. This means that we won’t be allowed to cheat by giving the logger a static implementation, like we did in the previous example.
 
@@ -152,4 +152,4 @@ Now we've made up for playing dirty in the first example by demonstrating a more
 
 Ok, but why? It’s neat to be able to create explicit instances of protocol conforming implementations, but does this give us anything? Well, stick around for the next example and find out!
 
-[Example 3: Multiple implementations -->](/swift-protocol-witnesses/swift-protocol-witnesses-3/)
+[Example 3: Multiple implementations -->](/posts/swift-protocol-witnesses/swift-protocol-witnesses-3/)

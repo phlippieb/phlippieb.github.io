@@ -6,9 +6,9 @@ listed: false
 excerpt: If you're thinking of replacing all your protocols with witnesses, you'll find that there is one feature of traditional protocols that we haven't covered in protocol witness world yet, namely inheritance.
  instead.
 ---
-This is part of a [series on protocol witnesses in Swift](/swift-protocol-witnesses/).
+This is part of a [series on protocol witnesses in Swift](/posts/swift-protocol-witnesses/).
 
-[<-- Example 5: An implementation per type](/swift-protocol-witnesses/swift-protocol-witnesses-5/)
+[<-- Example 5: An implementation per type](/posts/swift-protocol-witnesses/swift-protocol-witnesses-5/)
 
 If you're thinking of replacing all your protocols with witnesses, you'll find that there is one feature of traditional protocols that we haven't covered in protocol witness world yet, namely inheritance.
 

@@ -76,7 +76,7 @@ A clean way to differentiate these cases is to use an optional value. Nil indica
 
 ## Both
 
-In my travels, I soon ran into a use case where I wanted to use an optional to control showing an edit sheet, *and* to indicate to that sheet whether it should edit or create an item. Interestingly, this implies that the correct type for the item binding is an optional of an optional item — Double optionals or something idk. The outer optional is the binding that controls showing the sheet. The inner optional indicates whether the item to edit is new or an existing item.
+During my travels, I soon ran into a use case where I wanted to use an optional to control showing an edit sheet, *and* to indicate to that sheet whether it should edit or create an item. Interestingly, this implies that the correct type for the item binding is an optional of an optional item — Double optionals or something idk. The outer optional is the binding that controls showing the sheet. The inner optional indicates whether the item to edit is new or an existing item.
 
 Which gives us this in the code above:
 

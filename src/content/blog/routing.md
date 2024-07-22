@@ -6,7 +6,7 @@ listed: true
 excerpt: How we eschewed pre-built routing frameworks for a hand-rolled system based on protocols, enums and default implementations that is tailor made to our codebase
 ---
 
-_How we eschewed pre-built routing frameworks for a hand-rolled system based on protocols, enums and default implementations that is tailor made to our codebase_
+_How we eschewed pre-built routing frameworks for a hand-rolled system based on protocols, enums and default implementations that is tailor-made to our codebase_
 
 Developing software is a process, and so is becoming a better developer. I have fallen in most of the pitfalls that I have encountered on the iOS development trail so far, and I’m still slowly climbing out of them as I continue. It’s all part of the process, right?
 
@@ -16,7 +16,7 @@ Our implementation is probably not the most universally applicable framework out
 
 ---
 
-# Background
+## Background
 
 First off, our UIs are 100% programmatic, and virtually all of our navigation is based on `UINavigationControllers`. So to move from one screen to another, in our original, naive implementation, the first view controller would create the second view controller, get its current navigation controller, and push. It doesn’t always seem so bad, but we soon ran into what you might call some serious inconveniences.
 
@@ -37,7 +37,7 @@ It became clear to us that we would need something better. We’ve read about _r
 
 ---
 
-# A hand-rolled solution is in order
+## A hand-rolled solution is in order
 
 One thing you’ll notice when you read up about routing solutions is that it is usually implemented at an almost _infrastructural_ level. The solutions seem great, but if we were going to use any of the ones we came across, it would be an all-or-nothing commitment. I have grown to be skeptical of [big rewrites](http://chadfowler.com/2006/12/27/the-big-rewrite.html){:target="_blank"}, and would always prefer something that can be implemented at a small, partial scale as a proof of concept.
 
@@ -53,9 +53,9 @@ So we set out to design a routing solution with the following requirements:
 
 ---
 
-# Implementation
+## Implementation
 
-First off, let’s define protocols for the core concepts. What are the core concepts? Well, let’s think about what want to achieve: we want a way to go to a screen. So we are dealing with the concept of a a place to go to, or a **destination**. And we also need a thing that will take us to that destination, which we will simply call a **router**.
+First off, let’s define protocols for the core concepts. What are the core concepts? Well, let’s think about what want to achieve: we want a way to go to a screen. So we are dealing with the concept of a place to go to, or a **destination**. And we also need a thing that will take us to that destination, which we will simply call a **router**.
 
 Here is a protocol for a destination:
 
@@ -242,7 +242,7 @@ Any router that inherits from this base class and has an associated RoutingDesti
 
 ---
 
-# Evaluating the solution
+## Evaluating the solution
 
 Let’s recap what we set out to achieve. We wanted a routing system that is
 
@@ -258,7 +258,7 @@ And lastly, this allows us to factor out much of the details involved in setting
 
 ---
 
-# Conclusion
+## Conclusion
 
 While there are many out-of-the-box routing implementations, each codebase is different, and our codebase had special requirements and special affordances. The system demonstrated here will certainly not be implementable, without change, in just any codebase, but the approaches we used might be useful to you.
 
