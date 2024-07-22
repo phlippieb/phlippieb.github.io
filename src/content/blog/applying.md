@@ -11,7 +11,7 @@ _Adding a configured method to variable types to help you organise your code whi
 
 ---
 
-# Closure initialisation
+## Closure initialisation
 
 In our Swift codebase, we make extensive use of the “[closure initialisation](https://medium.com/the-traveled-ios-developers-guide/swift-initialization-with-closures-5ea177f65a5){:target="_blank"}” standard. For example, instead of writing this:
 
@@ -58,7 +58,7 @@ How about a more finger-friendly standard?
 
 ---
 
-# Map
+## Map
 
 We want to combine the advantage of _not_ using the closure initialisation standard —- namely, the ability for a variable’s type to be inferred from its initialisation —- with the advantages of the standard —- such as the ability to perform the configuration of an object as part of its declaration.
 
@@ -82,7 +82,7 @@ So taking our cue from this type of syntax, why don't we add a `configured` meth
 
 ---
 
-# Configured
+## Configured
 
 Our configuration method will be very simple, and the implementation will be the same for all types. An easy way to add a method to arbitrary types is to declare a protocol, then extend that protocol with the method to add:
 
@@ -124,7 +124,7 @@ Blammo!
 
 ---
 
-# Cocoapods
+## Cocoapods
 
 UPDATE 9 August 2019:
 
