@@ -2,17 +2,18 @@
 // An icon shown in the top left
 // NOTE: The weird unicode bit tells the browser to
 // render it as a unicode char, not as an emoji.
-const icon = "🌐"
-const siteTitle = "phlippieb"
+const icon = "🌐";
+const siteTitle = "phlippieb";
 
 // Nav links
-const posts = {"title": "Posts", "path": "/posts/" }
-const work = {"title": "Work", "path": "/work/"}
-const feed = {"title": "Feed", "path": "/feed"}
-const about = {"title": "About", "path": "/about/"}
+const posts = { title: "Posts", path: "/posts/" };
+const work = { title: "Work", path: "/work/" };
+const feed = { title: "Feed", path: "/feed" };
+const about = { title: "About", path: "/about/" };
 
-const navLinks = [posts, work, feed, about]
+const navLinks = [posts, feed, work, about];
 ---
+
 <header>
   <nav>
     <!-- Left side: icon and title -->
@@ -22,15 +23,16 @@ const navLinks = [posts, work, feed, about]
         <span>{siteTitle}</span>
       </a>
     </div>
-    
+
     <!-- Right side: nav links -->
     <div>
-      {navLinks.map((navLink) =>
-        <span>
-          <a href={navLink.path}>{navLink.title}</a>
-        </span>
-        )}
-      </div>
-    </nav>
-  </header>
-  
+      {
+        navLinks.map((navLink) => (
+          <span>
+            <a href={navLink.path}>{navLink.title}</a>
+          </span>
+        ))
+      }
+    </div>
+  </nav>
+</header>

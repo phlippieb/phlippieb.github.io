@@ -1,29 +1,31 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Columns from '../../components/Columns.astro';
-import Column from '../../components/Column.astro';
+import { getCollection } from "astro:content";
+import PostLayout from "../../layouts/PostLayout.astro";
+import Columns from "../../components/Columns.astro";
+import Column from "../../components/Column.astro";
 
 export async function getStaticPaths() {
-  const entries = await getCollection('feed');
-  return entries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+  const entries = await getCollection("feed");
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-<BaseLayout pageTitle={entry.data.title}>
+
+<PostLayout pageTitle={entry.data.title}>
   <Columns>
     <Column>
       <h2>{entry.data.title}</h2>
-      
+
       <time class="secondary" datetime={entry.data.date.toISOString()}>
         {entry.data.date.toDateString()}
       </time>
 
-     <Content />
+      <Content />
     </Column>
   </Columns>
-</BaseLayout>
+</PostLayout>

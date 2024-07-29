@@ -1,27 +1,30 @@
 ---
-import Columns from './Columns.astro';
-import Column from './Column.astro';
+import Columns from "./Columns.astro";
+import Column from "./Column.astro";
 ---
+
 <footer>
   <Columns>
     <Column>
       <h4>©&#xFE0E; Phlippie Bosman</h4>
-      <a href="https://astro.build/">Created with astro.js</a><br>
+      <a href="https://astro.build/">Created with astro.js</a><br />
       <!-- TODO: When on github.io repo -->
-      <a href="https://github.com/phlippieb/phlippieb.github.io">View website source</a>
+      <a href="https://github.com/phlippieb/phlippieb.github.io"
+        >View website source</a
+      >
     </Column>
 
     <Column>
       <h4><a href="/">Home</a></h4>
       <h4><a href="/posts/">Posts</a></h4>
-      
+
       <h4><a href="/work/">Work</a></h4>
-      <a href="/projects/">Projects</a><br>
-      <a href="/packages/">Packages</a><br>
-      <a href="https://resume.phlippieb.dev">Resume</a><br>
-      <a href="/skills/">Skills</a><br>
-      <a href="/opensource/">Open Source</a><br>
-      
+      <a href="/projects/">Projects</a><br />
+      <a href="/packages/">Packages</a><br />
+      <a href="https://resume.phlippieb.dev">Resume</a><br />
+      <a href="/skills/">Skills</a><br />
+      <a href="/opensource/">Open Source</a><br />
+
       <h4><a href="/feed/">Feed</a></h4>
 
       <h4><a href="/about/">About</a></h4>
@@ -33,13 +36,13 @@ import Column from './Column.astro';
   footer {
     color: white;
     background: #1e1e1e;
-    
+
     /* Padding inside footer: */
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 5%;
     padding-right: 5%;
-    
+
     /* White space above footer: */
     margin-top: 300px;
     margin-bottom: -100px;
@@ -49,8 +52,10 @@ import Column from './Column.astro';
     padding-bottom: 0px;
   }
 
+  a {
+    text-decoration: none;
+  }
   a:hover {
     color: yellow;
   }
-  
 </style>
