@@ -16,7 +16,7 @@ To illustrate the concept of protocol witnesses, we’ll start with an example t
 
 Say we have a protocol for things that can “foo”, and a class that depends on a thing that can “foo”.
 
-```
+```swift
 protocol CanFoo {
   func foo()
 }
@@ -32,7 +32,7 @@ class FooClient {
 
 Let’s make a class that implements the protocol (i.e. conforms to it), and inject an instance of that class into the client:
 
-```
+```swift
 class DefaultFooer {
   func foo() {}
 }
@@ -51,7 +51,7 @@ Now, let’s convert this setup to use protocol witnesses instead.
 
 The first thing we’ll do is express the protocol requirement (namely that conforming instances should be able to “foo”) in a struct instead of a protocol.
 
-```
+```swift
 struct CanFoo {
   let foo: () -> Void
 }
@@ -63,7 +63,7 @@ Next, let’s revisit `FooClient`, the client that relies on `CanFoo` as a depen
 
 We will have to make some changes to the default implementation class, though. This is the part where we cheat a little to make things easier — we’re going to give `DefaultFooer` a static method, instead of an instance method.
 
-```
+```swift
 class DefaultFooer {
   static func foo() {}
 }
@@ -71,7 +71,7 @@ class DefaultFooer {
 
 Now for the magic. Since `CanFoo` is no longer a protocol, we don’t confirm `DefaultFooer` to it in the traditional sense. Remember how I said that the protocol witness struct is like a *container* for a specific implementation of a protocol? Let’s create a static instance of the protocol witness struct that contains an implementation of the foo-functionality, using the concrete implementation provided by our class:
 
-```
+```swift
 extension CanFoo {
   static let defaultFooer = CanFoo(foo: { DefaultFooer.foo() })
 }
@@ -83,7 +83,7 @@ We now have an instance of an *implementation* of `CanFoo` that we can use in ou
 
 Time to inject this dependency into the client:
 
-```
+```swift
 let client = FooClient()
 client.fooer = .defaultFooer
 ```

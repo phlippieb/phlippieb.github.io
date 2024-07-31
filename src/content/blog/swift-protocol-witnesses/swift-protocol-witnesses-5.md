@@ -14,7 +14,7 @@ As we mentioned in a previous example, a limitation of normal protocols is that 
 
 Say I want to create an abstract expression of the notion that one type can be converted to another. We could define a protocol:
 
-```
+```swift
 protocol Convertible {
   associatedtype To
   func convert() -> To
@@ -23,7 +23,7 @@ protocol Convertible {
 
 And we can conform a type to this protocol; for example, we can make `Int` convertible to `String`:
 
-```
+```swift
 extension Int: Convertible {
   func convert() -> String {
     return “\(self)”
@@ -35,7 +35,7 @@ let s: String = 1.convert()
 
 But if we *also* want to make the same type convertible to another type, we’re out of luck. For example, we may want to do this:
 
-```
+```swift
 extension Int: Convertible {
     func convert() -> Float {
         return Float(self)
@@ -49,7 +49,7 @@ But because we already created one conformance of `Int` to `Convertible`, we’r
 
 `Convertible` is a silly example, but I have come across many real use cases in my code where I wanted to create type-specific implementations of a protocol. Luckily, with protocol witnesses, this is easy:
 
-```
+```swift
 struct Converting<From, To> {
   let convert: (From) -> To
 }

@@ -13,7 +13,7 @@ Protocol witnesses, as we have discussed them so far, already offer a notable be
 
 To demonstrate this, we’ll modify our `CanFoo` example:
 
-```
+```swift
 struct CanFoo {
   let foo: () -> Void
 }

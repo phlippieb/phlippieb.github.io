@@ -18,7 +18,7 @@ In this example, we’ll define an abstract protocol for a state machine (borrow
 
 Let’s define the abstract protocol — as a protocol:
 
-```
+```swift
 protocol StateMachineProtocol {
   associatedtype State
   associatedtype Event
@@ -30,7 +30,7 @@ protocol StateMachineProtocol {
 
 … vs as a protocol witness:
 
-```
+```swift
 struct StateMachineProtocolWitness<State, Event> {
   let state: () -> State
   let handleEvent: (Event) -> Void
@@ -43,7 +43,7 @@ Notably, to convert the get-only property `state`, we change its type slightly t
 
 Next, we’ll define a simple state and event type for our state machine implementations to use:
 
-```
+```swift
 enum OnOffState {
   case on, off
 }
@@ -61,7 +61,7 @@ Now we will define a client that depends on a state machine. But this client wil
 
 This is where normal protocols start to show their limitations. Because our `StateMachineProtocol` has associated types, a statement like this is invalid in Swift:
 
-```
+```swift
 var stateMachine: StateMachineProtocol!
 ```
 
@@ -69,7 +69,7 @@ This is fair, because it doesn’t even express what we need it to — namely, w
 
 Thus, to define our client in protocol world, we have to write this:
 
-```
+```swift
 class OnOffStateMachineProtocolClient<StateMachine: StateMachineProtocol>
 where StateMachine.State == OnOffState,
       StateMachine.Event == OnOffEvent
@@ -82,7 +82,7 @@ Phew! When this started, I certainly didn’t think about my client as a generic
 
 By contrast, if we live in protocol witness world, we can define our client like this:
 
-```
+```swift
 class OnOffStateMachineProtocolWitnessClient {
     var stateMachine: StateMachineProtocolWitness<OnOffState, OnOffEvent>!
 }
@@ -94,7 +94,7 @@ Isn’t that just *so much* better? The code is almost *English* in its clarity 
 
 Now, let’s create a concrete state machine implementation. Still borrowing from that previous post, we’ll keep the implementation lazy and let it accept its state transition logic as an init parameter, along with the initial state to use.
 
-```
+```swift
 class StateMachine<State, Event> {
   typealias NextState = (State, Event) -> State
 
@@ -116,7 +116,7 @@ class StateMachine<State, Event> {
 
 This class already has a `state` property and `handle(event:`) function, so conforming it to `StateMachineProtocol` is simple:
 
-```
+```swift
 extension StateMachine: StateMachineProtocol {}
 ```
 
@@ -124,7 +124,7 @@ extension StateMachine: StateMachineProtocol {}
 
 Over in protocol witness world, we need to create an explicit implementation instance. We’ll opt to provide this implementation from the state machine instances themselves:
 
-```
+```swift
 extension StateMachine {
   func stateMachineProtocolWitness() -> StateMachineProtocolWitness<State, Event> {
     StateMachineProtocolWitness<State, Event>(
@@ -138,7 +138,7 @@ Admittedly less sexy than we had it in protocol world — it feels a little dupl
 
 Let’s make a concrete state machine dependency:
 
-```
+```swift
 let onOffStateMachine = StateMachine<OnOffState, OnOffEvent>(state: .on) {
   (state, _) in (state == .on) ? .off : .on
 }
@@ -148,13 +148,13 @@ Now we’re ready to inject this dependency into our clients.
 
 Starting on the protocol side, we try to write
 
-```
+```swift
 var protocolClient = OnOffStateMachineProtocolClient()
 ```
 
 But we are immediately hit with this mildly infuriating error: `Generic parameter 'StateMachine' could not be inferred`. We were forced to make the client generic to accommodate the generic protocol dependency, and now we are forced to specialise an instance of the client with the concrete dependency we intend to use:
 
-```
+```swift
 var protocolClient = OnOffStateMachineProtocolClient<StateMachine<OnOffState, OnOffEvent>>()
 protocolClient.stateMachine = onOffStateMachine
 ```
@@ -163,7 +163,7 @@ Considering our goal — which is to decouple the client from its dependency —
 
 And speaking of a better way, let’s do the injection on the protocol witness side:
 
-```
+```swift
 var protocolWitnessClient = OnOffStateMachineProtocolWitnessClient()
 protocolWitnessClient.stateMachine = onOffStateMachine.stateMachineProtocolWitness()
 ```

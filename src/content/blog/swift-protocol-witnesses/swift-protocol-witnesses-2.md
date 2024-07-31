@@ -17,7 +17,7 @@ Let’s first paint the picture using normal protocols.
 
 Using normal Swift protocols, our little ecosystem looks like this:
 
-```
+```swift
 protocol Logging {
   func log(message: String)
 }
@@ -54,7 +54,7 @@ What does this look like with protocol witnesses?
 
 Starting with the protocol, our witness struct will look like this:
 
-```
+```swift
 struct Logging {
   let log: (String) -> Void
 }
@@ -64,14 +64,14 @@ In other words, a conforming instance of the `Logging` protocol should provide a
 
 We have to make one change to `LoggingClient`, because its `logger` dependency is now an instance of a struct, where that struct has a stored closure called `log`; it is no longer a function, so it doesn’t have a labeled parameter anymore. The only part that changes is how we call `log`:
 
-```
+```swift
 // Before: logger.log(message: “42”)
 logger.log(“42”)
 ```
 
 This is a small but notable downside to using protocol witnesses in the way we demonstrate here: closures don’t have labeled parameters. We can, of course, work around this by providing an outward-facing method with the nicest labeled parameters we can think of, which simply calls the internally-stored closures under the hood. So while we’re talking about it, let’s refactor our protocol witness:
 
-```
+```swift
 struct Logging {
   init(log: (String) -> Void) {
     self._log = log
@@ -89,7 +89,7 @@ Depending on the severity of your OCD, this may or may not be what you want. I p
 
 Alright, next up is the magic bit. Time to create a concrete “conformance” instance of `Logging` for our concrete `PrintLogger` class. We’ll remove the `: Logging` from the class declaration, as we’re no longer dealing with a normal protocol. Then we will create a static method on `Logging` to provide an implementation of the protocol.
 
-```
+```swift
 class PrintLogger {
   func log(message: String) {
     print(message)
@@ -113,7 +113,7 @@ When comparing this to the conformance instance from example 1, there are two im
 
 The second point sounds complicated, but it’s quite easy to understand. Because of how `Logging` is defined, Swift provides multiple valid syntaxes to initialise an instance. The following three initialisation statements are equivalent and equally valid:
 
-```
+```swift
 // Given some `logger`,
 let logging1 = Logging(log: { logger.log($0) }
 let logging2 = Logging { logger.log($0) }
@@ -124,7 +124,7 @@ Cycling back to the first point, we said that we now provide a concrete protocol
 
 Let’s inject a `PrintLogger` as an implementation of `Logging` into our client:
 
-```
+```swift
 let client = LoggingClient()
 let printLogger = PrintLogger()
 client.logger = .printLogger(printLogger)
@@ -132,7 +132,7 @@ client.logger = .printLogger(printLogger)
 
 A different approach that we might take is to provide `Logging` conformance as an instance method of `PrintLogger` instances themselves:
 
-```
+```swift
 extension PrintLogger {
   var logging: Logging {
     return Logging(log: self.log)
