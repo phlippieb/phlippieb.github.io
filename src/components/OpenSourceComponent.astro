@@ -1,4 +1,7 @@
 ---
+import Columns from './Columns.astro';
+import Column from './Column.astro';
+
 const {limit} = Astro.props;
 const items = [
 
@@ -19,11 +22,17 @@ const items = [
 //  .filter((p) => p.data.listed)
   .slice(0, limit ?? 999);
 ---
-<p>
-{items.map((item) => 
-<a href={item}>
-{item.replace('https://github.com/', '')}
-</a>
-<br>
-)}
-</p>
+<Columns>
+  <Column>
+
+  <p>
+    {items.map((item) => 
+      <a href={item} class="no-underline">
+        {item.replace('https://github.com/', '')}
+      </a>
+      <br>
+    )}
+  </p>
+
+</Column>
+</Columns>

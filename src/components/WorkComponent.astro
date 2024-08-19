@@ -6,6 +6,7 @@ import PackagesComponent from "./PackagesComponent.astro"
 import ProjectsComponent from "./ProjectsComponent.astro"
 import SkillsComponent from "./SkillsComponent.astro"
 import OpenSourceComponent from "./OpenSourceComponent.astro"
+import TalksComponent from './TalksComponent.astro';
 
 const resumeTitle = "Professional resume";
 
@@ -46,3 +47,7 @@ const resumeAboutBlurb = "My resume is open source, written in markdown/HTML/CSS
 <h3>Open source contributions</h3>
 <OpenSourceComponent limit=4 />
 <a href="/opensource">View all open source contributions</a>
+
+<h3>Talks</h3>
+<TalksComponent />
+<a href="/talks">View all talks</a>

@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import Columns from './Columns.astro';
+import Column from './Column.astro';
+
+const talks = (await getCollection('talks'))
+  .sort((a, b) =>  (b.data.date as any) - (a.data.date as any))
+---
+<Columns>
+  <Column>
+    <p>
+    {talks.map((talk) => 
+      <a href={talk.data.url} class="no-underline">
+        {talk.data.title} ↗<br>
+        {talk.data.description}<br>
+        <time class="secondary" datetime={talk.data.date.toISOString()}>
+          {talk.data.date.toDateString()}
+        </time>
+        <br>
+        <br>
+      </a>
+      <br>
+    )}
+    </p>
+  </Column>
+</Columns>

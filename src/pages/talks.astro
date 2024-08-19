@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TalksComponent from '../components/TalksComponent.astro';
+
+const title = 'Talks';
+---
+<BaseLayout pageTitle={title}>
+    <h2>{title}</h2>
+    <TalksComponent />
+</BaseLayout>

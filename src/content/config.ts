@@ -41,9 +41,20 @@ const feedCollection = defineCollection({
     }),
 })
 
+const talksCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        date: z.date(),
+        url: z.string().url(),
+    }),
+})
+
 export const collections = {
   'blog': blogCollection,
   'packages': packagesCollection,
   'projects': projectsCollection,
-  'feed': feedCollection, 
+  'feed': feedCollection,
+  'talks': talksCollection,
 };
