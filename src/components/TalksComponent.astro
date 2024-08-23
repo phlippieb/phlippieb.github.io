@@ -11,7 +11,7 @@ const talks = (await getCollection('talks'))
     <p>
     {talks.map((talk) => 
       <a href={talk.data.url} class="no-underline">
-        {talk.data.title} ↗<br>
+        {talk.data.title} ↗&#xFE0E;<br>
         {talk.data.description}<br>
         <time class="secondary" datetime={talk.data.date.toISOString()}>
           {talk.data.date.toDateString()}
