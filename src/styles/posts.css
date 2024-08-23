@@ -50,6 +50,16 @@ h1 {
   font-weight: 400;
   width: 50%;
 }
+@media screen and (max-width: 768px) {
+  h1 {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    width: 100%;
+  }
+}
 
 h1::before {
   display: block;
@@ -135,9 +145,13 @@ nav a {
   width: 50%;
 }
 
-/* .col a { */
-  /* text-decoration: none; */
-/* } */
+hr {
+  color: transparent;
+  border-bottom: 1px solid var(--primary);
+  margin-left: -200%;
+  width: 1000%;
+  padding-top: 60px;
+}
 
 .post-preview p {
   display: -webkit-box;
