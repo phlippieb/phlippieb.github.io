@@ -15,10 +15,9 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 <PostLayout pageTitle={entry.data.title}>
+  <h1>{entry.data.title}</h1>
   <Columns>
     <Column>
-      <h1>{entry.data.title}</h1>
-      
       <time class="secondary" datetime={entry.data.published.toISOString()}>
         {entry.data.published.toDateString()}
       </time>

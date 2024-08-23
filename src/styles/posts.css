@@ -21,6 +21,7 @@ body {
   color: var(--primary);
   letter-spacing: -.06em;
   margin: 0px;
+  overflow-x: hidden;
 }
 
 main {
@@ -47,15 +48,20 @@ a:hover {
 h1 {
   font-size: 3em;
   font-weight: 400;
+  width: 50%;
 }
 
 h1::before {
   display: block;
   content: '';
-  margin-top: 150px;
+  margin-top: 180px; /* Space above line */
+  margin-bottom: 30px; /* Space below line */
   border-bottom: 1px solid var(--primary);
-}
 
+  /* Line touches edges */
+  margin-left: -100%;
+  margin-right: -200%;
+}
 h1::after {
   display: block;
   content: '';

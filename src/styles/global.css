@@ -21,6 +21,7 @@ body {
   color: var(--primary);
   letter-spacing: -.06em;
   margin: 0px;
+  overflow-x: hidden;
 }
 
 main {
@@ -29,7 +30,7 @@ main {
 }
 
 p {
-  letter-spacing: -.034em
+  letter-spacing: -.034em;
 }
 
 a {
@@ -59,14 +60,13 @@ h2 {
 h2::before {
   display: block;
   content: '';
-  margin-top: 150px;
+  margin-top: 180px; /* Space above line */
+  margin-bottom: 30px; /* Space below line */
   border-bottom: 1px solid var(--primary);
-}
 
-h2::after {
-  display: block;
-  content: '';
-  margin-top: 100px;
+  /* Line touches edges */
+  margin-left: -6%;
+  margin-right: -6%;
 }
 
 h3 {
@@ -81,6 +81,10 @@ h4 {
 
 header {
   width: 100%;
+  margin-left: -6%;
+  padding-left: 6%;
+  margin-right: -6%;
+  padding-right: 6%;
   position: sticky; top: 0;
   background: var(--bg);
   padding-top: 16px;
