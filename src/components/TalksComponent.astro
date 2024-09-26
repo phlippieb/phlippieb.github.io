@@ -7,9 +7,8 @@ const talks = (await getCollection('talks'))
   .sort((a, b) =>  (b.data.date as any) - (a.data.date as any))
 ---
 <Columns>
-  <Column>
-    <p>
-    {talks.map((talk) => 
+  {talks.map((talk) => 
+    <Column>
       <a href={talk.data.url} class="no-underline">
         {talk.data.title} ↗&#xFE0E;<br>
         {talk.data.description}<br>
@@ -20,7 +19,6 @@ const talks = (await getCollection('talks'))
         <br>
       </a>
       <br>
-    )}
-    </p>
   </Column>
+  )}
 </Columns>
