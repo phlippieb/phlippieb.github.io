@@ -1,0 +1,110 @@
+
+---
+import Columns from './Columns.astro';
+import Column from './Column.astro';
+
+const resumeTitle = "Professional resume";
+
+const resumeBlurb = "View my full professional resume.";
+
+const resumeAboutTitle = "About my resume";
+const resumeAboutBlurb = "My resume is open source, written in markdown/HTML/CSS, managed as a trunk-based-development software mini-project, and published through GitHub Pages. Read about it.";
+
+const skillsBlurb = "I have over 8 years' professional experience as a mobile software engineer, primarily focusing on iOS mobile application development, with exposure to the full stack. I've worked in environments ranging from lean startups to enterprises. My skills include hands-on production experience with the following:";
+
+type CategoryAndSkills = [string, string[]];
+const skills: CategoryAndSkills[] = [
+  ["iOS engineering", [
+  "Swift",
+  "Objective-C",
+  "SwiftUI ",
+  "SwiftData ",
+  "UIKit ",
+  "Share extensions",
+  "Widgets",
+  "Localization",
+  "Certificates and profiles management",
+  "App Store and Test Flight deployment"
+  ]],
+
+  ["iOS frameworks and tools", [
+    "Realm",
+    "Firebase",
+    "RxSwift",
+    "SwiftyJSON",
+    "AutoLayout",
+    "SwiftLint",
+    "Fastlane",
+  ]],
+
+  ["Networking", [
+    "REST",
+    "gRPC",
+    "Protocol buffers",
+    "Go middleware",
+  ]],
+
+  ["Testing", [
+    "Unit testing",
+    "XCTest framework",
+    "Quick/Nimble",
+    "TDD",
+  ]],
+
+  ["Other mobile engineering", [
+    "Flutter",
+    "Dart",
+    "Ionic",
+  ]],
+
+  ["Other stack exposure", [
+    "Relational databases",
+    "Node.js",
+    "Vue.js",
+  ]],
+
+  ["CI/CD", [
+    "Bitrise",
+    "GitHub Actions",
+  ]],
+
+  ["Methodologies", [
+    "Agile",
+    "Scrum",
+  ]]
+];
+---
+<Columns>
+  <Column>
+    <a href="https://resume.phlippieb.dev">
+      <h4>{resumeTitle} ↗&#xFE0E;</h4>
+      <p>{resumeBlurb}</p>
+    </a>
+  </Column>
+  <Column />
+  
+  <Column>
+    <a href="/posts/resume-as-software-microproject/">
+      <h4>{resumeAboutTitle}</h4>
+      <p>{resumeAboutBlurb}</p>
+    </a>
+  </Column>
+  <Column />
+
+  <Column>
+    <h4>Skills</h4>
+    <p>{skillsBlurb}</p>
+  </Column>
+  <Column />
+
+  {skills.map((category) => 
+  <Column>
+    <div class="post-preview">
+        <h5>{category[0]}</h5> 
+        {category[1].map((s) =>
+          <div>{s} </div>
+        )}
+      </div>
+  </Column>
+  )}
+</Columns>
