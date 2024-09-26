@@ -2,11 +2,7 @@
 import { Breadcrumbs } from "astro-breadcrumbs";
 import "astro-breadcrumbs/breadcrumbs.css";
 
-// An icon shown in the top left
-// NOTE: The weird unicode bit tells the browser to
-// render it as a unicode char, not as an emoji.
-const icon = "🌐";
-const siteTitle = "phlippieb";
+const siteTitle = "phlippieb.dev";
 
 // Nav links
 const posts = { title: "Posts", path: "/posts/" };
@@ -42,10 +38,8 @@ const navLinks = [posts, feed, work, about];
           ><polyline points="9 18 15 12 9 6"></polyline>
         </svg>
       </Breadcrumbs>
-      </span>
     </div>
     
-
     <!-- Right side: nav links -->
     <div>
       {
