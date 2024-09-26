@@ -1,4 +1,7 @@
 ---
+import { Breadcrumbs } from "astro-breadcrumbs";
+import "astro-breadcrumbs/breadcrumbs.css";
+
 // An icon shown in the top left
 // NOTE: The weird unicode bit tells the browser to
 // render it as a unicode char, not as an emoji.
@@ -16,13 +19,36 @@ const navLinks = [posts, feed, work, about];
 
 <header>
   <nav>
-    <!-- Left side: icon and title -->
+    <!-- Left side: icon, title, breadcrumbs -->
     <div>
-      <a href="/">
-        <span class="accent">{icon}&#xFE0E;</span>
-        <span>{siteTitle}</span>
-      </a>
+      <span class="accent">
+        {icon}&#xFE0E;
+      <!-- </span> -->
+      <!-- TODO: Fix breadcrumbs displaying on next line -->
+      <!-- <span> -->
+      <Breadcrumbs
+        indexText={siteTitle}
+        linkTextFormat="capitalized"
+        ariaLabel="a structured list of pages"
+        separatorAriaHidden=false
+      >
+        <svg
+          slot="separator"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </Breadcrumbs>
+      </span>
     </div>
+    
 
     <!-- Right side: nav links -->
     <div>
@@ -36,3 +62,11 @@ const navLinks = [posts, feed, work, about];
     </div>
   </nav>
 </header>
+
+<style>
+  header {
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+  }
+</style>
