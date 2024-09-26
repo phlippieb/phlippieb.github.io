@@ -21,11 +21,7 @@ const navLinks = [posts, feed, work, about];
   <nav>
     <!-- Left side: icon, title, breadcrumbs -->
     <div>
-      <span class="accent">
-        {icon}&#xFE0E;
-      <!-- </span> -->
-      <!-- TODO: Fix breadcrumbs displaying on next line -->
-      <!-- <span> -->
+      <!-- TODO: Fix breadcrumbs displaying on next line after icon -->
       <Breadcrumbs
         indexText={siteTitle}
         linkTextFormat="capitalized"
@@ -63,10 +59,3 @@ const navLinks = [posts, feed, work, about];
   </nav>
 </header>
 
-<style>
-  header {
-    white-space: nowrap;
-    display: inline-block;
-    vertical-align: top;
-  }
-</style>
