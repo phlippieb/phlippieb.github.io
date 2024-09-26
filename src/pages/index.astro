@@ -8,8 +8,9 @@ import Columns from "../components/Columns.astro";
 import Column from "../components/Column.astro";
 
 const title = "Phlippie Bosman";
+const years = (new Date()).getFullYear() - 2016;
 const topBlurb =
-  "Mobile software engineer with 8+ years' experience creating digital products, specialising in Swift/iOS mobile applications, with exposure to the full stack. Team and technical lead biased for action. Passionate about clean software design and ergonomics, continuous learning and knowledge sharing, and excellent user experiences.";
+  "Mobile software engineer with " + years + " years' experience creating digital products, specialising in Swift/iOS mobile applications, with exposure to the full stack. Team and technical lead biased for action. Passionate about clean software design and ergonomics, continuous learning and knowledge sharing, and excellent user experiences.";
 ---
 
 <BaseLayout pageTitle={title}>

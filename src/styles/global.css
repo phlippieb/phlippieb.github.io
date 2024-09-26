@@ -19,9 +19,9 @@ body {
   font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
   color: var(--primary);
-  letter-spacing: -.06em;
   margin: 0px;
   overflow-x: hidden;
+  letter-spacing: -.034em;
 }
 
 main {
@@ -50,11 +50,13 @@ a:hover {
 
 h1 {
   font-size: 3em;
+  letter-spacing: -.06em;
 }
 
 h2 {
   font-size: 3em;
   font-weight: 400;
+  letter-spacing: -.06em;
 }
 
 h2::before {
@@ -73,10 +75,20 @@ h3 {
   font-size: 2em;
   font-weight: 400;
   margin-top: 100px;
+  /* letter-spacing: -.06em; */
 }
 
 h4 {
+  font-size: 1em;
   letter-spacing: 0em;
+  /* letter-spacing: -.06em; */
+}
+
+h5 {
+  font-size: 1em;
+  letter-spacing: 0em;
+  color: var(--secondary);
+  /* letter-spacing: -.06em; */
 }
 
 header {
