@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.8.0",
-    "@astrojs/sitemap": "^3.2.0",
-    "astro": "^6.5.0",
-    "astro-breadcrumbs": "^3.4.0",
-    "typescript": "^5.5.3"
+    "@astrojs/check": "^0.9.0",
+    "@astrojs/sitemap": "^3.3.0",
+    "astro": "^6.7.0",
+    "astro-breadcrumbs": "^4.0.3",
+    "typescript": "^5.6.0"
   }
 }
